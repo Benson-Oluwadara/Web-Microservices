@@ -1,0 +1,79 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+using AuthAPI.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Builder;
+using AuthAPI.Models;
+using AuthAPI.Services.IService;
+using AuthAPI.Services.Service;
+using AuthAPI.Repository.Repository;
+using AuthAPI.Repository.IRepository;
+using Microsoft.Data.SqlClient;
+using System.Data;
+using System.Text;
+using mango.messagebus;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+Console.WriteLine("Connection String: " + builder.Configuration.GetConnectionString("SqlConnection"));
+
+// Add services to the container.
+builder.Services.AddControllers();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "AuthAPI", Version = "v1" });
+});
+
+builder.Services.AddTransient<IDbConnection>(_ => new SqlConnection(builder.Configuration.GetConnectionString("SqlConnection")));
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("JwtOptions"));
+
+var jwtSecret = builder.Configuration["ApiSettings:JwtOptions:Secret"];
+Console.WriteLine($"JwtSecret: {jwtSecret}");
+// Configure JWT authentication
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["ApiSettings:JwtOptions:Issuer"],
+            ValidAudience = builder.Configuration["ApiSettings:JwtOptions:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["ApiSettings:JwtOptions:Secret"]))
+        };
+    });
+
+// Configure DbContext
+//builder.Services.AddDbContext<AppDBContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Add application services
+builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IRepository_, UserRepository>();
+builder.Services.AddScoped<IMessageBus, MessageBus>();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AuthAPI v1"));
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthentication(); // Use authentication middleware
+app.UseAuthorization();
+
+app.MapControllers(); // Simplified endpoint mapping
+
+app.Run();

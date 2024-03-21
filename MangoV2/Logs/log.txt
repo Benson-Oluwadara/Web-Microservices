@@ -1,0 +1,1277 @@
+01/27/2024 18:41:05 Application is starting 
+01/27/2024 18:41:35 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Service.IService.ICouponService' while attempting to activate 'Mango.Services.CouponAPI.Controllers.CouponController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method9(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+01/27/2024 18:45:27 Application is starting 
+01/27/2024 18:45:28 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Repository.Repository.CouponRepository': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.) (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Repository.Repository.CouponRepository': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+01/27/2024 18:45:28 Application is shutting down 
+01/27/2024 18:45:44 Application is starting 
+01/27/2024 18:45:45 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Repository.Repository.CouponRepository': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.) (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Repository.Repository.CouponRepository': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+01/27/2024 18:45:45 Application is shutting down 
+01/27/2024 18:45:55 Application is starting 
+01/27/2024 18:45:56 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Repository.Repository.CouponRepository': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.) (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Repository.Repository.CouponRepository': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+01/27/2024 18:45:56 Application is shutting down 
+01/27/2024 18:46:04 Application is starting 
+01/27/2024 18:46:05 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Repository.Repository.CouponRepository': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.) (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Repository.Repository.CouponRepository': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+01/27/2024 18:46:05 Application is shutting down 
+01/27/2024 18:46:50 Application is starting 
+01/27/2024 18:46:51 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Repository.Repository.CouponRepository': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.) (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Repository.Repository.CouponRepository': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' while attempting to activate 'Mango.Services.CouponAPI.Repository.Repository.CouponRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+01/27/2024 18:46:51 Application is shutting down 
+01/27/2024 18:47:39 Application is starting 
+01/27/2024 18:47:40 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+01/27/2024 18:47:40 Application is shutting down 
+01/27/2024 18:47:50 Application is starting 
+01/27/2024 18:47:50 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+01/27/2024 18:47:51 Application is shutting down 
+01/27/2024 18:49:15 Application is starting 
+01/27/2024 18:49:16 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Mango.Services.CouponAPI.Repository.IRepository.ICouponRepository' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+01/27/2024 18:49:16 Application is shutting down 
+01/27/2024 18:50:19 Application is starting 
+01/27/2024 18:50:20 Application failed to start correctly 
+System.ArgumentException: Cannot instantiate implementation type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' for service type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.Populate()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory..ctor(ICollection`1 descriptors)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+01/27/2024 18:50:20 Application is shutting down 
+01/27/2024 18:55:01 Application is starting 
+01/27/2024 18:55:02 Application failed to start correctly 
+System.ArgumentException: Cannot instantiate implementation type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' for service type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.Populate()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory..ctor(ICollection`1 descriptors)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+01/27/2024 18:55:02 Application is shutting down 
+01/27/2024 19:03:39 Application is starting 
+01/27/2024 19:03:39 Application failed to start correctly 
+System.ArgumentException: Cannot instantiate implementation type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' for service type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.Populate()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory..ctor(ICollection`1 descriptors)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+01/27/2024 19:03:39 Application is shutting down 
+01/27/2024 19:05:11 Application is starting 
+01/27/2024 19:05:12 Application failed to start correctly 
+System.ArgumentException: Cannot instantiate implementation type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' for service type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.Populate()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory..ctor(ICollection`1 descriptors)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+01/27/2024 19:05:12 Application is shutting down 
+01/27/2024 19:06:31 Application is starting 
+01/27/2024 19:06:33 Application failed to start correctly 
+System.ArgumentException: Cannot instantiate implementation type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' for service type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.Populate()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory..ctor(ICollection`1 descriptors)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+01/27/2024 19:06:33 Application is shutting down 
+01/27/2024 19:11:09 Application is starting 
+01/27/2024 19:11:10 Application failed to start correctly 
+System.ArgumentException: Cannot instantiate implementation type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository' for service type 'Mango.Services.CouponAPI.Database.IDapperRepositorys.IDapperRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.Populate()
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory..ctor(ICollection`1 descriptors)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+01/27/2024 19:11:10 Application is shutting down 
+01/27/2024 19:14:16 Application is starting 
+01/27/2024 19:14:17 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+01/27/2024 19:14:17 Application is shutting down 
+01/27/2024 19:14:29 Application is starting 
+01/27/2024 19:14:30 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+01/27/2024 19:14:30 Application is shutting down 
+01/27/2024 19:18:29 Application is starting 
+01/27/2024 19:19:41 An unhandled exception has occurred while executing the request. 
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'LastUpdateDate', table 'MangoDatabase.dbo.Coupons'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader()
+   at System.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteNonQuery(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 662
+   at Mango.Services.CouponAPI.Database.DapperRepositorys.DapperRepository.ExecuteAsync(String sql, Object parameters, Nullable`1 commandType) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Database\DapperRepositorys\DapperRepository.cs:line 31
+   at Mango.Services.CouponAPI.Repository.Repository.CouponRepository.CreateCouponAsync(CreateCouponDTO createCouponDto) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Repository\Repository\CouponRepository.cs:line 25
+   at Mango.Services.CouponAPI.Service.Service.CouponService.CreateCouponAsync(CreateCouponDTO createCouponDto) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Service\Service\CouponService.cs:line 34
+   at Mango.Services.CouponAPI.Controllers.CouponController.CreateCoupon(CreateCouponDTO createCouponDto) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Controllers\CouponController.cs:line 51
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:b2dedee4-5520-4c48-9061-d92e6b4f9b54
+Error Number:515,State:2,Class:16
+01/27/2024 19:47:04 Application is starting 
+01/27/2024 22:47:39 Application is starting 
+01/27/2024 22:50:47 Application is starting 
+01/27/2024 23:04:48 Application is starting 
+01/27/2024 23:51:19 Application is starting 
+01/28/2024 00:11:25 Application is starting 
+01/28/2024 01:17:35 Application is starting 
+01/28/2024 01:21:50 Application is starting 
+01/28/2024 09:53:39 Application is starting 
+01/28/2024 09:55:20 Application is starting 
+01/28/2024 09:59:37 Application is starting 
+01/28/2024 10:04:16 Application is starting 
+01/28/2024 10:07:51 Application is starting 
+01/28/2024 10:10:43 Application is starting 
+01/28/2024 10:18:15 Application is starting 
+01/28/2024 10:19:05 Application is starting 
+01/28/2024 10:21:50 Application is starting 
+01/28/2024 10:24:07 Application is starting 
+01/28/2024 10:29:54 Application is starting 
+01/28/2024 10:32:54 Application is starting 
+01/28/2024 10:38:00 Application is starting 
+01/28/2024 10:49:21 Application is starting 
+01/28/2024 10:53:47 Application is starting 
+01/28/2024 10:55:00 Application is starting 
+01/28/2024 19:21:44 Application is starting 
+01/28/2024 19:28:57 Application is starting 
+01/28/2024 19:29:53 Application is starting 
+01/28/2024 19:31:30 Application is starting 
+01/28/2024 19:40:57 Application is starting 
+01/28/2024 19:45:48 Application is starting 
+01/28/2024 19:54:09 Application is starting 
+01/28/2024 19:57:04 Application is starting 
+01/28/2024 20:04:45 Application is starting 
+01/28/2024 20:08:25 Application is starting 
+01/28/2024 20:10:36 Application is starting 
+01/28/2024 20:16:50 Application is starting 
+01/28/2024 20:18:32 Application is starting 
+01/28/2024 20:21:05 Application is starting 
+01/28/2024 20:36:31 Application is starting 
+01/28/2024 20:41:07 Application is starting 
+01/28/2024 20:43:55 Application is starting 
+01/28/2024 20:46:22 Application is starting 
+01/28/2024 21:30:47 Application is starting 
+01/28/2024 21:33:11 Application is starting 
+01/28/2024 21:35:09 Application is starting 
+01/28/2024 21:36:06 Application is starting 
+01/28/2024 21:52:27 Application is starting 
+01/28/2024 21:56:25 Application is starting 
+01/28/2024 22:24:55 Application is starting 
+01/28/2024 22:50:13 Application is starting 
+01/28/2024 23:10:45 Application is starting 
+01/28/2024 23:13:17 Application is starting 
+01/28/2024 23:15:40 Application is starting 
+01/28/2024 23:21:58 Application is starting 
+01/28/2024 23:26:14 Application is starting 
+01/28/2024 23:42:57 Application is starting 
+01/28/2024 23:52:14 Application is starting 
+01/28/2024 23:53:30 Application is starting 
+01/29/2024 00:08:59 Application is starting 
+01/29/2024 00:10:14 Application is starting 
+01/29/2024 00:32:58 Application is starting 
+01/29/2024 00:34:27 Application is starting 
+01/29/2024 00:38:44 Application is starting 
+01/29/2024 00:44:08 Application is starting 
+01/29/2024 00:51:47 Application is starting 
+01/29/2024 01:00:24 Application is starting 
+01/29/2024 01:04:17 Application is starting 
+01/29/2024 01:09:14 Application is starting 
+01/29/2024 01:17:32 Application is starting 
+01/29/2024 01:23:29 Application is starting 
+01/29/2024 10:19:33 Application is starting 
+01/29/2024 10:21:31 Application is starting 
+01/29/2024 10:24:36 Application is starting 
+01/29/2024 10:36:25 Application is starting 
+01/29/2024 10:40:19 Application is starting 
+01/29/2024 10:42:13 Application is starting 
+01/29/2024 10:46:51 Application is starting 
+01/29/2024 10:48:03 Application is starting 
+01/29/2024 10:49:59 Application is starting 
+01/29/2024 10:51:14 Application is starting 
+01/29/2024 11:03:57 Application is starting 
+01/29/2024 11:08:33 Application is starting 
+01/29/2024 23:39:45 Application is starting 
+01/29/2024 23:45:08 Application is starting 
+01/29/2024 23:50:50 Application is starting 
+01/29/2024 23:57:15 Application is starting 
+01/30/2024 00:00:30 Application is starting 
+01/30/2024 00:24:31 Application is starting 
+01/30/2024 00:31:39 Application is starting 
+01/30/2024 00:37:02 Application is starting 
+01/30/2024 00:38:43 Application is starting 
+01/30/2024 00:43:32 Application is starting 
+01/30/2024 00:44:02 Application is starting 
+01/30/2024 00:46:59 Application is starting 
+01/30/2024 00:48:12 Application is starting 
+01/30/2024 00:55:29 Application is starting 
+01/30/2024 01:00:36 Application is starting 
+01/30/2024 01:10:37 Application is starting 
+01/30/2024 01:15:41 Application is starting 
+01/30/2024 01:18:47 Application is starting 
+01/30/2024 01:24:41 Application is starting 
+01/30/2024 01:30:32 Application is starting 
+01/30/2024 01:36:25 Application is starting 
+01/30/2024 01:42:11 Application is starting 
+01/30/2024 01:47:03 Application is starting 
+01/30/2024 01:49:58 Application is starting 
+01/30/2024 01:52:57 Application is starting 
+01/30/2024 02:02:17 Application is starting 
+01/30/2024 02:05:05 Application is starting 
+01/30/2024 02:09:57 Application is starting 
+01/30/2024 02:16:42 Application is starting 
+01/30/2024 02:22:19 Application is starting 
+01/30/2024 02:24:24 Application is starting 
+01/30/2024 02:26:45 Application is starting 
+01/30/2024 02:30:14 Application is starting 
+01/30/2024 02:32:18 Application is starting 
+01/30/2024 02:38:32 Application is starting 
+01/30/2024 02:40:46 Application is starting 
+01/30/2024 02:45:40 Application is starting 
+01/30/2024 21:51:25 Application is starting 
+01/30/2024 22:34:28 Application is starting 
+01/30/2024 22:59:04 Application is starting 
+01/30/2024 23:03:14 Application is starting 
+01/30/2024 23:10:53 Application is starting 
+01/30/2024 23:13:06 Application is starting 
+01/30/2024 23:15:07 Application is starting 
+01/30/2024 23:16:49 Application is starting 
+01/30/2024 23:25:01 Application is starting 
+01/30/2024 23:39:31 Application is starting 
+01/30/2024 23:41:19 Application is starting 
+01/30/2024 23:44:00 Application is starting 
+01/31/2024 00:16:59 Application is starting 
+01/31/2024 00:30:39 Application is starting 
+01/31/2024 00:34:43 Application is starting 
+01/31/2024 00:38:33 Application is starting 
+01/31/2024 00:42:05 Application is starting 
+01/31/2024 00:47:14 Application is starting 
+01/31/2024 00:49:53 Application is starting 
+01/31/2024 00:51:20 Application is starting 
+01/31/2024 01:01:28 Application is starting 
+01/31/2024 01:04:47 Application is starting 
+01/31/2024 01:06:21 Application is starting 
+01/31/2024 01:08:30 Application is starting 
+01/31/2024 01:12:21 Application is starting 
+01/31/2024 01:17:41 Application is starting 
+01/31/2024 01:22:49 Application is starting 
+01/31/2024 01:40:49 Application is starting 
+01/31/2024 01:47:52 Application is starting 
+01/31/2024 01:51:56 Application is starting 
+01/31/2024 01:53:14 Application is starting 
+01/31/2024 01:55:52 Application is starting 
+01/31/2024 02:12:35 Application is starting 
+01/31/2024 02:37:23 Application is starting 
+01/31/2024 03:00:05 Application is starting 
+01/31/2024 03:02:19 Application is starting 
+01/31/2024 03:04:09 Application is starting 
+01/31/2024 03:06:17 Application is starting 
+01/31/2024 03:08:05 Application is starting 
+01/31/2024 03:10:35 Application is starting 
+01/31/2024 03:11:07 Application is starting 
+01/31/2024 03:16:54 Application is starting 
+01/31/2024 03:17:02 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+01/31/2024 03:17:13 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+01/31/2024 03:17:29 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+01/31/2024 03:17:45 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+01/31/2024 03:18:39 Application is starting 
+01/31/2024 03:18:48 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+01/31/2024 03:18:58 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+02/06/2024 21:39:46 Application is starting 
+02/06/2024 21:43:50 Application is starting 
+02/06/2024 21:45:49 Application is starting 
+02/06/2024 21:52:27 Application is starting 
+02/06/2024 21:54:19 Application is starting 
+02/06/2024 22:07:37 Application is starting 
+02/06/2024 22:14:54 Application is starting 
+02/06/2024 22:26:23 Application is starting 
+02/06/2024 22:31:27 Application is starting 
+02/06/2024 22:36:00 Application is starting 
+02/06/2024 22:38:10 Application is starting 
+02/06/2024 22:38:36 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+02/06/2024 22:41:04 Application is starting 
+02/06/2024 22:56:03 Application is starting 
+02/06/2024 22:57:29 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+02/07/2024 14:37:42 Application is starting 
+02/07/2024 14:37:44 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 14:37:45 Application is shutting down 
+02/07/2024 14:40:36 Application is starting 
+02/07/2024 14:40:37 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 14:40:37 Application is shutting down 
+02/07/2024 14:49:37 Application is starting 
+02/07/2024 14:52:59 Application is starting 
+02/07/2024 14:55:13 Application is starting 
+02/07/2024 14:55:14 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 14:55:14 Application is shutting down 
+02/07/2024 14:56:13 Application is starting 
+02/07/2024 14:56:15 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 14:56:15 Application is shutting down 
+02/07/2024 15:02:41 Application is starting 
+02/07/2024 15:02:43 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 15:02:43 Application is shutting down 
+02/07/2024 15:03:30 Application is starting 
+02/07/2024 15:03:31 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 15:03:31 Application is shutting down 
+02/07/2024 15:04:23 Application is starting 
+02/07/2024 15:04:24 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 15:04:24 Application is shutting down 
+02/07/2024 16:42:19 Application is starting 
+02/07/2024 16:42:21 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 16:42:21 Application is shutting down 
+02/07/2024 16:42:37 Application is starting 
+02/07/2024 16:42:38 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 16:42:38 Application is shutting down 
+02/07/2024 16:43:32 Application is starting 
+02/07/2024 16:43:33 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 16:43:33 Application is shutting down 
+02/07/2024 17:01:33 Application is starting 
+02/07/2024 17:01:34 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 17:01:34 Application is shutting down 
+02/07/2024 17:10:03 Application is starting 
+02/07/2024 17:10:05 Application failed to start correctly 
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Mango.Services.CouponAPI.Service.IService.ICouponService Lifetime: Scoped ImplementationType: Mango.Services.CouponAPI.Service.Service.CouponService': Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.IMapper' while attempting to activate 'Mango.Services.CouponAPI.Service.Service.CouponService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.InitializeServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Mango.service.CouponAPI.Program.Main(String[] args) in C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.CouponAPI\Program.cs:line 28
+02/07/2024 17:10:05 Application is shutting down 
+02/07/2024 17:21:01 Application is starting 
+02/07/2024 17:23:40 Application is starting 
+02/07/2024 17:28:40 Application is starting 
+02/07/2024 18:23:13 Application is starting 
+02/07/2024 18:30:15 Application is starting 
+02/08/2024 09:11:56 Application is starting 
+02/08/2024 09:29:16 Application is starting 
+02/08/2024 09:37:35 Application is starting 
+02/08/2024 09:55:32 Application is starting 
+02/09/2024 10:47:56 Application is starting 
+02/09/2024 10:50:42 Application is starting 
+02/09/2024 10:51:24 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+02/09/2024 10:55:17 Application is starting 
+02/09/2024 10:55:30 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+02/09/2024 10:55:42 An unhandled exception has occurred while executing the request. 
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+02/09/2024 10:57:31 Application is starting 
+02/09/2024 11:01:15 Application is starting 
+02/09/2024 11:03:54 Application is starting 
+02/09/2024 11:06:30 Application is starting 
+02/09/2024 11:09:32 Application is starting 
+02/09/2024 13:06:05 Application is starting 
+02/09/2024 13:11:09 Application is starting 
+02/09/2024 13:12:39 Application is starting 
+02/09/2024 14:02:33 Application is starting 
+02/09/2024 14:10:53 Application is starting 
+02/09/2024 14:13:34 Application is starting 
+02/09/2024 14:36:59 Application is starting 
+02/09/2024 14:41:43 Application is starting 
+02/09/2024 14:56:59 Application is starting 
+02/09/2024 15:08:59 Application is starting 
+02/09/2024 15:27:32 Application is starting 
+02/09/2024 15:45:53 Application is starting 
+02/09/2024 16:06:12 Application is starting 
+02/09/2024 16:06:57 Application is starting 
+02/09/2024 16:15:30 Application is starting 
+02/09/2024 16:23:31 Application is starting 
+02/09/2024 16:27:10 Application is starting 
+02/09/2024 16:30:56 Application is starting 
+02/09/2024 16:35:39 Application is starting 
+02/09/2024 16:43:07 Application is starting 
+02/09/2024 16:44:46 Application is starting 
+02/09/2024 17:06:07 Application is starting 
+02/09/2024 17:07:07 Application is starting 
+02/09/2024 17:12:44 Application is starting 
+02/09/2024 17:36:40 Application is starting 
+02/10/2024 09:21:47 Application is starting 
+02/10/2024 09:41:11 Application is starting 
+02/10/2024 10:08:58 Application is starting 
+02/10/2024 10:43:03 Application is starting 
+02/10/2024 11:08:15 Application is starting 
+02/10/2024 11:17:35 Application is starting 
+02/10/2024 11:22:35 Application is starting 
+02/10/2024 11:30:56 Application is starting 
+02/10/2024 12:08:55 Application is starting 
+02/10/2024 12:21:07 Application is starting 
+02/10/2024 12:39:31 Application is starting 
+02/10/2024 12:52:17 Application is starting 
+02/10/2024 12:58:38 Application is starting 
+02/10/2024 13:39:25 Application is starting 
+02/10/2024 13:48:05 Application is starting 
+02/10/2024 13:51:50 Application is starting 
+02/10/2024 14:06:25 Application is starting 
+02/10/2024 14:07:10 Application is starting 
+02/10/2024 14:07:47 Application is starting 
+02/10/2024 14:35:28 Application is starting 
+02/10/2024 20:30:09 Application is starting 
+02/10/2024 20:31:51 Application is starting 
+02/10/2024 20:35:11 Application is starting 
+02/10/2024 20:39:55 Application is starting 
+02/10/2024 22:08:11 Application is starting 
+02/11/2024 00:41:07 Application is starting 
+02/11/2024 00:47:16 Application is starting 
+02/11/2024 01:34:30 Application is starting 
+02/11/2024 01:39:23 Application is starting 
+02/11/2024 01:45:43 Application is starting 
+02/11/2024 01:46:22 Application is starting 
+02/11/2024 01:47:16 Application is starting 
+02/11/2024 02:17:53 Application is starting 
+02/11/2024 02:25:03 Application is starting 
+02/11/2024 02:36:04 Application is starting 
+02/11/2024 02:38:55 Application is starting 
+02/11/2024 02:41:23 Application is starting 
+02/11/2024 02:44:18 Application is starting 
+02/11/2024 02:54:34 Application is starting 
+02/11/2024 02:58:13 Application is starting 
+02/11/2024 09:26:32 Application is starting 
+02/11/2024 09:27:42 Application is starting 
+02/11/2024 14:58:21 Application is starting 
+02/11/2024 15:45:16 Application is starting 
+02/11/2024 15:47:19 Application is starting 
+02/11/2024 15:47:53 Application is starting 
+02/11/2024 15:48:40 Application is starting 
+02/11/2024 15:50:24 Application is starting 
+02/11/2024 16:30:34 Application is starting 
+02/11/2024 16:31:43 Application is starting 
+02/13/2024 14:30:13 Application is starting 
+02/13/2024 14:43:13 Application is starting 
+02/13/2024 14:44:34 Application is starting 
+02/13/2024 15:18:10 Application is starting 
+02/13/2024 15:18:33 Application is starting 
+02/13/2024 15:19:25 Application is starting 
+02/13/2024 15:20:21 Application is starting 
+02/13/2024 15:21:53 Application is starting 
+02/13/2024 15:22:57 Application is starting 
+02/13/2024 15:42:46 Application is starting 
+02/13/2024 15:46:18 Application is starting 
+02/13/2024 15:46:34 Application is starting 
+02/13/2024 15:47:01 Application is starting 
+02/13/2024 15:47:23 Application is starting 
+02/13/2024 15:56:56 Application is starting 
+02/13/2024 15:59:18 Application is starting 
+02/13/2024 15:59:41 Application is starting 
+02/13/2024 16:21:57 Application is starting 
+02/13/2024 16:22:14 Application is starting 
+02/13/2024 16:22:37 Application is starting 
+02/13/2024 16:24:54 Application is starting 
+02/13/2024 16:32:55 Application is starting 
+02/13/2024 16:33:24 Application is starting 
+02/13/2024 16:37:49 Application is starting 
+02/13/2024 16:38:57 Application is starting 
+02/13/2024 16:46:39 Application is starting 
+02/13/2024 16:46:58 Application is starting 
+02/13/2024 16:47:19 Application is starting 
+02/13/2024 16:59:34 Application is starting 
+02/13/2024 17:06:49 Application is starting 
+02/13/2024 17:09:10 Application is starting 
+02/13/2024 17:10:18 Application is starting 
+02/13/2024 17:10:42 Application is starting 
+02/13/2024 17:14:39 Application is starting 
+02/13/2024 17:15:07 Application is starting 
+02/13/2024 17:15:23 Application is starting 
+02/13/2024 17:25:40 Application is starting 
+02/13/2024 17:31:55 Application is starting 
+02/13/2024 17:35:24 Application is starting 
+02/13/2024 17:48:37 Application is starting 
+02/13/2024 19:13:26 Application is starting 
+02/13/2024 19:14:31 Application is starting 
+02/13/2024 19:15:33 Application is starting 
+02/13/2024 19:22:00 Application is starting 
+02/13/2024 19:25:45 Application is starting 
+02/13/2024 20:36:33 Application is starting 
+02/13/2024 20:44:37 Application is starting 
+02/13/2024 20:59:13 Application is starting 
+02/14/2024 09:18:12 Application is starting 
+02/14/2024 09:27:26 Application is starting 
+02/14/2024 09:28:24 Application is starting 
+02/14/2024 09:29:50 Application is starting 
+02/14/2024 09:32:32 Application is starting 
+02/14/2024 09:35:25 Application is starting 
+02/27/2024 17:17:43 Application is starting 
+02/27/2024 17:23:49 Application is starting 
+02/27/2024 17:30:02 Application is starting 
+02/27/2024 17:32:05 Application is starting 
+02/27/2024 17:44:24 Application is starting 
+02/27/2024 18:26:37 Application is starting 
+02/27/2024 19:14:11 Application is starting 
+02/27/2024 19:24:18 Application is starting 
+02/27/2024 19:55:33 Application is starting 
+03/08/2024 22:35:10 Application is starting 
+03/09/2024 11:33:15 Application is starting 
+03/09/2024 11:56:26 Application is starting 
+03/09/2024 12:37:17 Application is starting 
+03/09/2024 13:02:21 Application is starting 
+03/09/2024 13:10:23 Application is starting 
+03/09/2024 13:13:24 Application is starting 
+03/09/2024 13:15:55 Application is starting 
+03/09/2024 13:22:24 Application is starting 
+03/09/2024 13:29:11 Application is starting 
+03/09/2024 13:42:48 Application is starting 
+03/09/2024 14:03:20 Application is starting 
+03/09/2024 14:07:14 Application is starting 
+03/09/2024 14:13:27 Application is starting 
+03/09/2024 14:17:04 Application is starting 
+03/09/2024 14:19:45 Application is starting 
+03/09/2024 14:19:56 Application is starting 
+03/09/2024 14:26:37 Application is starting 
+03/09/2024 14:28:46 Application is starting 
+03/09/2024 14:47:50 Application is starting 
+03/09/2024 14:58:02 Application is starting 
+03/09/2024 15:01:00 Application is starting 
+03/09/2024 15:16:00 Application is starting 
+03/09/2024 16:38:33 Application is starting 
+03/09/2024 16:51:04 Application is starting 
+03/09/2024 17:14:12 Application is starting 
+03/09/2024 17:16:01 Application is starting 
+03/09/2024 18:02:22 Application is starting 
+03/09/2024 21:51:45 Application is starting 
+03/09/2024 23:09:02 Application is starting 
+03/09/2024 23:09:47 Application is starting 
+03/09/2024 23:11:46 Application is starting 
+03/09/2024 23:19:19 Application is starting 
+03/09/2024 23:20:18 Application is starting 
+03/09/2024 23:22:21 Application is starting 
+03/09/2024 23:53:15 Application is starting 
+03/10/2024 00:33:15 Application is starting 
+03/10/2024 00:45:59 Application is starting 
+03/10/2024 00:49:23 Application is starting 
+03/10/2024 01:02:13 Application is starting 
+03/11/2024 18:16:11 Application is starting 
+03/11/2024 20:12:44 Application is starting 
+03/11/2024 20:20:51 Application is starting 
+03/11/2024 20:22:31 Application is starting 
+03/11/2024 20:29:03 Application is starting 
+03/11/2024 20:30:31 Application is starting 
+03/11/2024 20:40:34 Application is starting 
+03/11/2024 20:54:30 Application is starting 
+03/11/2024 20:56:32 Application is starting 
+03/11/2024 21:00:02 Application is starting 
+03/11/2024 22:01:42 Application is starting 
+03/11/2024 22:04:10 Application is starting 
+03/11/2024 22:07:01 Application is starting 
+03/11/2024 22:13:59 Application is starting 
+03/11/2024 22:14:55 Application is starting 
+03/11/2024 22:17:45 Application is starting 
+03/11/2024 22:19:41 Application is starting 
+03/11/2024 22:34:16 Application is starting 
+03/12/2024 10:21:31 Application is starting 
+03/12/2024 10:59:29 Application is starting 
+03/12/2024 11:00:36 Application is starting 
+03/12/2024 11:28:51 Application is starting 
+03/12/2024 11:31:36 Application is starting 
+03/12/2024 12:14:23 Application is starting 
+03/12/2024 12:20:59 Application is starting 
+03/12/2024 12:31:15 Application is starting 
+03/12/2024 12:38:13 Application is starting 
+03/12/2024 12:43:55 Application is starting 
+03/12/2024 12:46:14 Application is starting 
+03/12/2024 12:49:17 Application is starting 
+03/12/2024 12:54:59 Application is starting 
+03/12/2024 12:58:50 Application is starting 
+03/12/2024 13:38:44 Application is starting 
+03/12/2024 13:55:45 Application is starting 
+03/12/2024 14:03:09 Application is starting 
+03/12/2024 14:11:11 Application is starting 
+03/12/2024 14:14:11 Application is starting 
+03/12/2024 14:16:33 Application is starting 
+03/12/2024 14:17:47 Application is starting 
+03/12/2024 14:20:58 Application is starting 
+03/12/2024 14:24:10 Application is starting 
+03/12/2024 14:25:53 Application is starting 
+03/12/2024 14:42:03 Application is starting 
+03/12/2024 14:43:03 Application is starting 
+03/12/2024 14:44:27 Application is starting 
+03/12/2024 14:55:58 Application is starting 
+03/12/2024 15:08:55 Application is starting 
+03/12/2024 15:10:06 Application is starting 
+03/12/2024 15:11:21 Application is starting 
+03/12/2024 15:12:13 Application is starting 
+03/12/2024 15:14:06 Application is starting 
+03/12/2024 15:18:32 Application is starting 
+03/12/2024 15:21:25 Application is starting 
+03/12/2024 15:26:26 Application is starting 
+03/12/2024 15:46:48 Application is starting 
+03/12/2024 16:14:12 Application is starting 
+03/12/2024 16:15:39 Application is starting 
+03/12/2024 16:17:15 Application is starting 
+03/12/2024 16:23:31 Application is starting 
+03/12/2024 16:26:39 Application is starting 
+03/12/2024 16:28:10 Application is starting 
+03/12/2024 16:30:45 Application is starting 
+03/12/2024 17:13:55 Application is starting 
+03/12/2024 17:16:56 Application is starting 
+03/12/2024 17:22:19 Application is starting 
+03/12/2024 18:19:44 Application is starting 
+03/12/2024 18:53:56 Application is starting 
+03/12/2024 18:58:41 Application is starting 
+03/12/2024 19:00:02 Application is starting 
+03/12/2024 19:07:41 Application is starting 
+03/12/2024 19:19:50 Application is starting 
+03/12/2024 19:21:26 Application is starting 
+03/12/2024 19:22:51 Application is starting 
+03/12/2024 19:24:30 Application is starting 
+03/12/2024 19:29:27 Application is starting 
+03/12/2024 19:44:58 Application is starting 
+03/14/2024 15:05:21 Application is starting 
+03/14/2024 19:33:46 Application is starting 
+03/14/2024 19:43:50 Application is starting 
+03/14/2024 20:05:29 Application is starting 
+03/14/2024 20:07:49 Application is starting 
+03/14/2024 20:11:25 Application is starting 
+03/14/2024 20:23:28 Application is starting 
+03/14/2024 20:26:33 Application is starting 
+03/15/2024 08:19:06 Application is starting 
+03/15/2024 08:25:44 Application is starting 
+03/15/2024 08:33:23 Application is starting 
+03/15/2024 08:41:44 Application is starting 
+03/15/2024 08:50:45 Application is starting 
+03/15/2024 08:54:00 Application is starting 
+03/15/2024 08:55:54 Application is starting 
+03/15/2024 08:57:19 Application is starting 
+03/15/2024 09:01:49 Application is starting 
+03/15/2024 09:20:17 Application is starting 
+03/15/2024 09:22:31 Application is starting 
+03/15/2024 09:23:44 Application is starting 
+03/15/2024 12:07:03 Application is starting 
+03/15/2024 12:09:35 Application is starting 
+03/15/2024 12:10:10 Application is starting 
+03/15/2024 12:11:37 Application is starting 
+03/16/2024 15:42:15 Application is starting 
+03/16/2024 15:42:57 Application is starting 
+03/16/2024 15:43:52 Application is starting 
+03/16/2024 15:44:39 Application is starting 
+03/16/2024 15:44:59 Application is starting 
+03/16/2024 15:56:30 Application is starting 
+03/16/2024 15:56:48 Application is starting 
+03/16/2024 15:57:02 Application is starting 
+03/16/2024 15:58:19 Application is starting 
+03/16/2024 15:58:37 Application is starting 
+03/16/2024 16:00:39 Application is starting 
+03/16/2024 16:23:19 Application is starting 
+03/16/2024 16:24:11 Application is starting 
+03/16/2024 16:30:19 Application is starting 
+03/16/2024 17:58:13 Application is starting 
+03/18/2024 15:59:47 Application is starting 
+03/18/2024 16:26:04 Application is starting 
+03/18/2024 16:54:42 Application is starting 
+03/18/2024 17:00:14 Application is starting 
+03/18/2024 17:10:41 Application is starting 
+03/18/2024 17:12:37 Application is starting 
+03/18/2024 17:23:40 Application is starting 
+03/18/2024 17:26:06 Application is starting 
+03/18/2024 17:33:46 Application is starting 
+03/18/2024 17:36:59 Application is starting 
+03/18/2024 17:38:44 Application is starting 
