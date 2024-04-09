@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="MangoGatewayServices" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\oluwadara\\Desktop\\Mango\ V2\\MangoV2\\Mango\.GatewayServices\\obj\\Release\\net7\.0\\win-x86\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

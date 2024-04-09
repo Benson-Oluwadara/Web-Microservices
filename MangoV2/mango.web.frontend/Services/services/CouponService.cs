@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using static mango.web.frontend.Utility.SD;
 using static System.Net.WebRequestMethods;
+using Serilog;
 
 namespace mango.web.frontend.Services.Services{
         public class CouponService : BaseService, ICouponService
@@ -23,8 +24,10 @@ namespace mango.web.frontend.Services.Services{
         
         public Task<T> CreateCouponAsync<T>(CreateCouponDTO couponDTO)
         {
-            Console.WriteLine("Create All Coupons!!!!!!!!!!!!!!!!!!!!!!!!!!\n!!!!!!!!!!!!!!!!!!!!!");
-
+            //Log the method function
+            Log.Information("CreateCouponAsync method called");
+            //Log in this method from which client the request is coming
+            Log.Information($"Request from CouponAPI to {SD.CouponAPIBase + "/api/coupons"}");
             return this.SendAsync<T>(new WebAPIRequest()
             {
                 apiType = SD.ApiType.POST,
@@ -35,6 +38,10 @@ namespace mango.web.frontend.Services.Services{
 
         public Task<T> DeleteCouponAsync<T>(int couponId)
         {
+            //Log the method function
+            Log.Information("DeleteCouponAsync method called");
+            //Log in this method from which client the request is coming
+            Log.Information($"Request from CouponAPI to {SD.CouponAPIBase + "/api/coupons/" + couponId}");
             return this.SendAsync<T>(new WebAPIRequest()
             {
                 apiType = SD.ApiType.DELETE,
@@ -45,7 +52,10 @@ namespace mango.web.frontend.Services.Services{
 
         public Task<T> GetAllCouponAsync<T>()
         {
-            Console.WriteLine("Get All Coupons!!!!!!!!!!!!!!!!!!!!!!!!!!\n!!!!!!!!!!!!!!!!!!!!!");
+            //Log the method function
+            Log.Information("GetAllCouponAsync method called");
+            //Log in this method from which client the request is coming
+            Log.Information($"Request from CouponAPI to {SD.CouponAPIBase + "/api/coupons"}");
             return this.SendAsync<T>(new WebAPIRequest()
             {
                 apiType = SD.ApiType.GET,
@@ -56,6 +66,10 @@ namespace mango.web.frontend.Services.Services{
 
         public Task<T> GetCouponByIdAsync<T>(int couponId)
         {
+            //Log the method function
+            Log.Information("GetCouponByIdAsync method called");
+            //Log in this method from which client the request is coming
+            Log.Information($"Request from CouponAPI to {SD.CouponAPIBase + "/api/coupons/" + couponId}");
             return this.SendAsync<T>(new WebAPIRequest()
             {
                 apiType = SD.ApiType.GET,
@@ -66,6 +80,10 @@ namespace mango.web.frontend.Services.Services{
 
         public Task<T> UpdateCouponAsync<T>(UpdateCouponDTO couponDTO)
         {
+            //Log the method function
+            Log.Information("UpdateCouponAsync method called");
+            //Log in this method from which client the request is coming
+            Log.Information($"Request from CouponAPI to {SD.CouponAPIBase + "/api/coupons/" + couponDTO.CouponId}");
             return this.SendAsync<T>(new WebAPIRequest()
             {
                 apiType = SD.ApiType.PUT,

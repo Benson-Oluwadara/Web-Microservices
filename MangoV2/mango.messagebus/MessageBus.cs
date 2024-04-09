@@ -8,6 +8,7 @@ namespace mango.messagebus
 {
     public class MessageBus : IMessageBus
     {
+
         private string Endpoint { get; set; } = "Endpoint=sb://mangowebv2.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=y2gIqVSELYB30lNUhIC/V3tvSukY87mO0+ASbO+plCc=";
         public async Task PublicMessage(object message, string topic_queue_name)
         {

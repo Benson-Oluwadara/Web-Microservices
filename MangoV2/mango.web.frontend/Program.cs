@@ -1,76 +1,46 @@
-using mango.web.frontend.Services.Iservices;
-using mango.web.frontend.Services.services;
-using mango.web.frontend.Services.Services;
-using mango.web.frontend.Utility;
-using Mango.web.frontend.Services.services;
-using Microsoft.AspNetCore.Authentication.Cookies;
 
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddHttpContextAccessor();
+using Serilog;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+using Serilog.Events;
+using mango.web.frontend;
 
-SD.CouponAPIBase = builder.Configuration["ServiceUrls:CouponAPI"];
-SD.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
-SD.ProductAPIBase = builder.Configuration["ServiceUrls:ProductAPI"];
-SD.ShoppingCartAPIBase = builder.Configuration["ServiceUrls:ShoppingCartAPI"];
-Console.WriteLine($"CouponAPIBase: {SD.CouponAPIBase}");
-Console.WriteLine($"AuthAPIBase: {SD.AuthAPIBase}");
-Console.WriteLine($"ProductAPIBase: {SD.ProductAPIBase}");
-Console.WriteLine($"ShoppingCartAPIBase: {SD.ShoppingCartAPIBase}");
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-//builder.Services.AddAutoMapper(typeof(Startup));
-builder.Services.AddHttpClient<ICouponService, CouponService>();
-builder.Services.AddScoped<IBaseService, BaseService>();
-builder.Services.AddScoped<ICouponService, CouponService>();
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<ITokenProvider, TokenProvider>();
-builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<ICartService, CartService>();
-builder.Services.AddHttpClient("CouponAPI", client =>
+namespace Mango.service.CouponAPI
 {
-    client.BaseAddress = new Uri("https://localhost:6001/");
-});
-builder.Services.AddHttpClient("AuthAPI", client =>
-{
-    client.BaseAddress = new Uri("https://localhost:6002/");
-});
-builder.Services.AddHttpClient("ProductAPI", client =>
-{
-    client.BaseAddress = new Uri("https://localhost:6003/");
-});
-builder.Services.AddHttpClient("ShoppingCartAPI", client =>
-{
-    client.BaseAddress = new Uri("https://localhost:6004/");
-});
-builder.Services.AddLogging();
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
+    public class Program
     {
-        options.ExpireTimeSpan= TimeSpan.FromMinutes(30);
-        options.LoginPath = "/Auth/Login"; // Adjust the login path based on your setup
-        options.AccessDeniedPath = "/Auth/AccessDenied"; // Adjust the access denied path based on your setup
-    });
+        public static void Main(string[] args)
+        {
 
+            var configuration = new ConfigurationBuilder()
+                   .AddJsonFile("appsettings.json")
+                   .Build();
 
-var app = builder.Build();
+            // Configure Serilog
+            Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(configuration)
+                .CreateLogger();
+            try
+            {
+                Log.Information("Application is starting");
+                CreateHostBuilder(args).Build().Run();
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex, "Application failed to start correctly");
+            }
+            finally
+            {
+                Log.Information("Application is shutting down");
+                Log.CloseAndFlush();
+            }
+        }
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .UseSerilog() // Integrating Serilog with the host
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
 }
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
-app.UseAuthentication();
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.Run();

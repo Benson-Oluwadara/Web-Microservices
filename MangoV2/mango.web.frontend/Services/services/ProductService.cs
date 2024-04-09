@@ -3,7 +3,7 @@ using mango.web.frontend.Models.WebDTO;
 using mango.web.frontend.Services.Iservices;
 using mango.web.frontend.Utility;
 using static System.Net.WebRequestMethods;
-
+using Serilog;
 namespace mango.web.frontend.Services.services
 {
     public class ProductService : BaseService, IProductService
@@ -15,6 +15,10 @@ namespace mango.web.frontend.Services.services
         }
         public Task<T> CreateProductAsync<T>(CreateProductDTO createproductDTO)
         {
+            //Log the method function
+            Log.Information("CreateProductAsync method called");
+            //Log in this method from which client the request is coming
+            Log.Information($"Request from ProductAPI to {SD.ProductAPIBase + "/api/products"}");
             return this.SendAsync<T>(new WebAPIRequest()
             {
                 apiType = SD.ApiType.POST,
@@ -27,18 +31,24 @@ namespace mango.web.frontend.Services.services
 
         public Task<T> DeleteProductAsync<T>(int productId)
         {
-            
+            //Log the method function
+            Log.Information("DeleteProductAsync method called");
+            //Log in this method from which client the request is coming
+            Log.Information($"Request from ProductAPI to {SD.ProductAPIBase + "/api/products/" + productId}");
             return this.SendAsync<T>(new WebAPIRequest()
             {
                 apiType = SD.ApiType.DELETE,
-                Url = "https://localhost:6003" + "/api/products/" + productId
+                Url = SD.ProductAPIBase + "/api/products/" + productId
             }, "ProductAPI");
         }
 
       
         public Task<T> GetAllProductAsync<T>()
         {
-            Console.WriteLine("URL is: " + SD.ProductAPIBase + "/api/products");
+            //Log the method function
+            Log.Information("GetAllProductAsync method called");
+            //Log in this method from which client the request is coming
+            Log.Information($"Request from ProductAPI to {SD.ProductAPIBase + "/api/products"}");
             return this.SendAsync<T>(new WebAPIRequest()
             {
                 apiType = SD.ApiType.GET,
@@ -50,6 +60,10 @@ namespace mango.web.frontend.Services.services
        
         public Task<T> GetProductByIdAsync<T>(int productId)
         {
+            //Log the method function
+            Log.Information("GetProductByIdAsync method called");
+                //Log in this method from which client the request is coming
+                Log.Information($"Request from ProductAPI to {SD.ProductAPIBase + "/api/products/" + productId}");
             return this.SendAsync<T>(new WebAPIRequest()
             {
                 apiType = SD.ApiType.GET,
@@ -58,6 +72,10 @@ namespace mango.web.frontend.Services.services
         }
         public Task<T> UpdateProductAsync<T>(UpdateProductDTO updateproductDTO)
         {
+            //Log the method function
+            Log.Information("UpdateProductAsync method called");
+            //Log in this method from which client the request is coming
+            Log.Information($"Request from ProductAPI to {SD.ProductAPIBase + "/api/products/" + updateproductDTO.ProductId}");
             return this.SendAsync<T>(new WebAPIRequest()
             {
                 apiType = SD.ApiType.PUT,

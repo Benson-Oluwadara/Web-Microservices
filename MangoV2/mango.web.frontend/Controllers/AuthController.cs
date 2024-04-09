@@ -10,6 +10,7 @@ using System.Security.Claims;
 using mango.web.frontend.Utility;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace mango.web.frontend.Controllers
 {
@@ -17,87 +18,26 @@ namespace mango.web.frontend.Controllers
     {
         private readonly IAuthService authService;
         private readonly ITokenProvider _tokenProvider;
-        private readonly ILogger<AuthController> _logger;
-        public AuthController(IAuthService authService, ITokenProvider tokenProvider, ILogger<AuthController> logger)
+        //private readonly ILogger<AuthController> _logger;
+        public AuthController(IAuthService authService, ITokenProvider tokenProvider/*, ILogger<AuthController> logger*/)
         {
             this.authService = authService;
             _tokenProvider = tokenProvider;
-            _logger = logger;
+            //_logger = logger;
         }
         [HttpGet]
         public IActionResult Login()
         {
             LoginRequestDto loginRequestDto = new();
+            Log.Information("{User} accessed the Login page.", User.Identity.Name);
             return View(loginRequestDto);
         }
-        //[HttpPost]
-        //public async Task<IActionResult> Login(LoginRequestDto obj)
-        //{
-        //    WebAPIResponse<LoginResponseDto> responseDto = await authService.LoginAsync<LoginResponseDto>(obj);
-
-        //    if (responseDto != null && responseDto.IsSuccess)
-        //    {
-        //        LoginResponseDto loginResponseDto = responseDto.Result;
-
-        //        if (loginResponseDto != null)
-        //        {
-        //            await SignInUser(loginResponseDto);
-        //            _tokenProvider.SetToken(loginResponseDto.Token);
-        //            return RedirectToAction("Index", "Home");
-        //        }
-        //        else
-        //        {
-        //            // Handle the case when loginResponseDto is null
-        //            // Log a warning or take appropriate action
-        //            return View(obj);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        TempData["error"] = responseDto.Message; // Check if 'Message' is a valid property in WebAPIResponse
-        //        return View(obj);
-        //    }
-        //}
-       
-
-        //[HttpPost]
-        //public async Task<IActionResult> Login(LoginRequestDto loginRequestDto)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var response = await authService.LoginAsync<WebAPIResponse>(loginRequestDto);
-
-        //        if (response.IsSuccess && response!=null)
-        //        {
-        //            // Handle successful login, e.g., set authentication cookie, redirect to dashboard
-        //            // You may use _tokenProvider to generate and manage tokens
-        //            LoginResponseDto loginResponseDto =
-        //            JsonConvert.DeserializeObject<LoginResponseDto>(Convert.ToString(response.Result));
-
-        //            await SignInUser(loginResponseDto);
-        //            _tokenProvider.SetToken(loginResponseDto.Token);
-        //            _logger.LogInformation($"Login successful. Token: {loginResponseDto.Token}");
-        //            return RedirectToAction("Index", "Home");
-        //        }
-        //        else
-        //        {
-        //            _logger.LogWarning($"Login failed. Error: {response.ErrorMessages}");
-        //            // Handle unsuccessful login, display error messages to the user
-        //            foreach (var errorMessage in response.ErrorMessages)
-        //            {
-        //                ModelState.AddModelError(string.Empty, errorMessage);
-        //            }
-                    
-        //        }
-        //    }
-
-        //    _logger.LogWarning($"Invalid login request. Username: {loginRequestDto.UserName}");
-        //    return View(loginRequestDto);
-        //}
-
+        
         [HttpGet]
         public IActionResult Register()
         {
+            Log.Information("{User} accessed the Register page.", User.Identity.Name);
+
             var roleList = new List<SelectListItem>()
             {
                 new SelectListItem{Text=SD.RoleAdmin,Value=SD.RoleAdmin},
@@ -105,11 +45,75 @@ namespace mango.web.frontend.Controllers
             };
 
             ViewBag.RoleList = roleList;
+            
+
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegistrationRequestDto obj)
+        {
+            //Console.WriteLine("Register Get Second Method");
+            try
+            {
+                Log.Information("{User} submitted registration form.", User.Identity.Name);
+
+                WebAPIResponse responseDto = await authService.RegisterAsync<WebAPIResponse>(obj);
+                WebAPIResponse assignRole;
+                //get the urk 
+                //string check = SD.AuthAPIBase.TrimEnd('/') + "/api/AuthAPI/Register";
+                //Console.WriteLine("Url is:" + check);
+
+                if (responseDto != null && responseDto.IsSuccess)
+                {
+                    //print responseDTO valus
+                    //Console.WriteLine(" inner method Response DTO: " + JsonConvert.SerializeObject(responseDto));
+                    if (string.IsNullOrEmpty(obj.Role))
+                    {
+                        obj.Role = SD.RoleCustomer;
+                        //print obj.Role
+                        //Console.WriteLine("Role is:" + obj.Role);
+                    }
+                    assignRole = await authService.AssignRoleAsync<WebAPIResponse>(obj.Email, obj.Role);
+                    //print assignRole
+                    //Console.WriteLine("Assign Role: " + JsonConvert.SerializeObject(assignRole));
+                    if (assignRole != null && assignRole.IsSuccess)
+                    {
+                        TempData["success"] = "Registration Successful";
+                        Log.Information($"Registration successful. Email: {obj.Email}");
+                        //Console.WriteLine($"Registration successful. Email: {obj.Email}");
+                        return RedirectToAction("Login");
+                    }
+                }
+                else
+                {
+                    Log.Warning($"Registration failed. Errors: {string.Join(", ", responseDto.ErrorMessages)}");
+                    TempData["error"] = string.Join(", ", responseDto.ErrorMessages);
+
+                }
+
+                var roleList = new List<SelectListItem>()
+        {
+            new SelectListItem{Text=SD.RoleAdmin,Value=SD.RoleAdmin},
+            new SelectListItem{Text=SD.RoleCustomer,Value=SD.RoleCustomer},
+        };
+
+                ViewBag.RoleList = roleList;
+
+                return View(obj);
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"An exception occurred during registration: {ex.Message}");
+                // Optionally, you can log the stack trace as well: _logger.LogError($"StackTrace: {ex.StackTrace}");
+                TempData["error"] = $"An unexpected error occurred during registration.";
+                return View(obj);
+            }
         }
         [HttpPost]
         public async Task<IActionResult> Login(LoginRequestDto loginRequestDto)
         {
+
             try
             {
                 if (ModelState.IsValid)
@@ -125,131 +129,59 @@ namespace mango.web.frontend.Controllers
 
                         await SignInUser(loginResponseDto);
                         _tokenProvider.SetToken(loginResponseDto.Token);
-                        _logger.LogInformation($"Login successful. Token: {loginResponseDto.Token}");
+                        Log.Information("User {Username} logged in successfully. Token: {Token}", loginRequestDto.UserName, loginResponseDto.Token);
                         return RedirectToAction("Index", "Home");
                     }
                     else
                     {
-                        _logger.LogWarning($"Login failed. Error: {response.ErrorMessages}");
-                        
+                        Log.Warning("User {Username} login failed. Error: {ErrorMessages}", loginRequestDto.UserName, string.Join(", ", response.ErrorMessages));
+
                         // Handle unsuccessful login, display error messages to the user
                         //_logger.LogWarning("Login failed. Errors:");
                         foreach (var errorMessage in response.ErrorMessages)
                         {
                             ModelState.AddModelError(string.Empty, errorMessage);
-                            _logger.LogWarning(errorMessage);
+                            Log.Warning(errorMessage);
                         }
 
                     }
                 }
 
-                _logger.LogWarning($"Invalid login request. Username: {loginRequestDto.UserName}");
+                Log.Warning($"Invalid login request. Username: {loginRequestDto.UserName}");
                 return View(loginRequestDto);
             }
             catch (Exception ex)
             {
-                _logger.LogError($"An exception occurred during login: {ex.Message}");
+                Log.Error($"An exception occurred during login: {ex.Message}");
                 // Optionally, you can log the stack trace as well: _logger.LogError($"StackTrace: {ex.StackTrace}");
                 ModelState.AddModelError(string.Empty, $"An unexpected error occurred during login.");
                 return View(loginRequestDto);
             }
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Register(RegistrationRequestDto obj)
-        {
-            try
-            {
-                WebAPIResponse responseDto = await authService.RegisterAsync<WebAPIResponse>(obj);
-                WebAPIResponse assignRole;
-
-                if (responseDto != null && responseDto.IsSuccess)
-                {
-                    if (string.IsNullOrEmpty(obj.Role))
-                    {
-                        obj.Role = SD.RoleCustomer;
-                    }
-                    assignRole = await authService.AssignRoleAsync<WebAPIResponse>(obj.Email, obj.Role);
-                    if (assignRole != null && assignRole.IsSuccess)
-                    {
-                        TempData["success"] = "Registration Successful";
-                        _logger.LogInformation($"Registration successful. Email: {obj.Email}");
-                        return RedirectToAction(nameof(Login));
-                    }
-                }
-                else
-                {
-                    _logger.LogWarning($"Registration failed. Error: {responseDto.ErrorMessages}");
-                    TempData["error"] = responseDto.ErrorMessages;
-                }
-
-                var roleList = new List<SelectListItem>()
-        {
-            new SelectListItem{Text=SD.RoleAdmin,Value=SD.RoleAdmin},
-            new SelectListItem{Text=SD.RoleCustomer,Value=SD.RoleCustomer},
-        };
-
-                ViewBag.RoleList = roleList;
-
-                return View(obj);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"An exception occurred during registration: {ex.Message}");
-                // Optionally, you can log the stack trace as well: _logger.LogError($"StackTrace: {ex.StackTrace}");
-                TempData["error"] = $"An unexpected error occurred during registration.";
-                return View(obj);
-            }
-        }
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
-            // Sign out the user
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            _tokenProvider.ClearToken();
-            // Optionally, you can redirect the user to a specific page after logout
-            return RedirectToAction("Index", "Home");
+            try
+            {
+                // Sign out the user
+                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                _tokenProvider.ClearToken();
+                Log.Information("User {Username} logged out.", User.Identity.Name);
+                // Optionally, you can redirect the user to a specific page after logout
+                return RedirectToAction("Index", "Home");
+            }
+            catch(Exception ex)
+            {
+                Log.Error(ex, "An exception occurred during logout: {ErrorMessage}", ex.Message);
+                return RedirectToAction("Index", "Home");
+            }
         }
 
 
-        //[HttpPost]
-        //public async Task<IActionResult> Register(RegistrationRequestDto obj)
-        //{
-        //    WebAPIResponse responseDto = await authService.RegisterAsync<WebAPIResponse>(obj);
-        //    WebAPIResponse assingRole;
-
-        //    if (responseDto != null && responseDto.IsSuccess)
-        //    {
-        //        if (string.IsNullOrEmpty(obj.Role))
-        //        {
-        //            obj.Role = SD.RoleCustomer;
-        //        }
-        //        assingRole = await authService.AssignRoleAsync<WebAPIResponse>(obj.Email,obj.Role );
-        //        if (assingRole != null && assingRole.IsSuccess)
-        //        {
-
-        //            TempData["success"] = "Registration Successful";
-        //            _logger.LogInformation($"Registration successful. Email: {obj.Email}");
-        //            return RedirectToAction(nameof(Login));
-        //        }
-        //    }
-        //    else
-        //    {
-        //        _logger.LogWarning($"Registration failed. Error: {responseDto.ErrorMessages}");
-        //        TempData["error"] = responseDto.ErrorMessages;
-        //    }
-
-        //    var roleList = new List<SelectListItem>()
-        //    {
-        //        new SelectListItem{Text=SD.RoleAdmin,Value=SD.RoleAdmin},
-        //        new SelectListItem{Text=SD.RoleCustomer,Value=SD.RoleCustomer},
-        //    };
-
-        //    ViewBag.RoleList = roleList;
-
-        //    return View(obj);
-        //}
+        
 
         private async Task SignInUser(LoginResponseDto model)
         {

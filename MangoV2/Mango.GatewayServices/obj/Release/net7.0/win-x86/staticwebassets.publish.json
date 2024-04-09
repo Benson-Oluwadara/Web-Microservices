@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "qFiS5osdbS3pCiAnlYOzqcupmi9HSw1pPSbiAhPC6Dc=",
+  "Source": "Mango.GatewayServices",
+  "BasePath": "_content/Mango.GatewayServices",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

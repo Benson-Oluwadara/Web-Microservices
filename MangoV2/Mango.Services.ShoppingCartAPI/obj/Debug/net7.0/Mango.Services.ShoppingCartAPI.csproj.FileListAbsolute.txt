@@ -121,3 +121,11 @@ C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\D
 C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\Debug\net7.0\System.ClientModel.dll
 C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\Debug\net7.0\mango.messagebus.dll
 C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\Debug\net7.0\mango.messagebus.pdb
+C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\Debug\net7.0\appsettings.Production.json
+C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\Debug\net7.0\Serilog.Sinks.PeriodicBatching.dll
+C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\Debug\net7.0\Serilog.Sinks.Seq.dll
+C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\Debug\net7.0\System.Threading.Channels.dll
+C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\Debug\net7.0\Humanizer.dll
+C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\oluwadara\Desktop\Mango V2\MangoV2\Mango.Services.ShoppingCartAPI\bin\Debug\net7.0\System.CodeDom.dll

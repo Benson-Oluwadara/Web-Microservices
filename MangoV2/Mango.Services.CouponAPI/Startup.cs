@@ -69,17 +69,22 @@ namespace Mango.Services.CouponAPI
         {
 
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
+            //if (env.IsDevelopment())
+            //{
+                //app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-            else
+            //app.UseSwaggerUI();
+            app.UseSwaggerUI(c =>
             {
-                app.UseExceptionHandler("/Error");
-                app.UseHsts();
-            }
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CouponAPI v1");
+                c.RoutePrefix = string.Empty;
+            });
+            //}
+            //else
+            //{
+            //    app.UseExceptionHandler("/Error");
+            //    app.UseHsts();
+            //}
 
             app.UseHttpsRedirection();
             app.UseRouting();

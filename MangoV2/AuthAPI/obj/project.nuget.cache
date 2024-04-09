@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D0lOMIcmLbHtB8kBv4AtCKEc0gMn0KmYAgfViyVHRR+PSHgPVNeW2bAAK8tcLgmzmtP9jsUY8DXhJEqkHt6nIw==",
+  "dgSpecHash": "qsdxFnUuMEDVaEBtpnAHjDqX6EJwzhFoC7jva4kdea0XXY1LyFyHAY9FoKByusXbGYzEDeu8scyOjj6sB+6VnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\oluwadara\\Desktop\\Mango Repo\\MangoV2\\AuthAPI\\AuthAPI.csproj",
+  "projectFilePath": "C:\\Users\\oluwadara\\Desktop\\Mango V2\\MangoV2\\AuthAPI\\AuthAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oluwadara\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
@@ -10,7 +10,7 @@
     "C:\\Users\\oluwadara\\.nuget\\packages\\azure.core.amqp\\1.3.0\\azure.core.amqp.1.3.0.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\azure.messaging.servicebus\\7.17.4\\azure.messaging.servicebus.7.17.4.nupkg.sha512",
-    "C:\\Users\\oluwadara\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\identitymodel\\6.2.0\\identitymodel.6.2.0.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
@@ -94,6 +94,8 @@
     "C:\\Users\\oluwadara\\.nuget\\packages\\serilog.sinks.console\\5.0.1\\serilog.sinks.console.5.0.1.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\serilog.sinks.debug\\2.0.0\\serilog.sinks.debug.2.0.0.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\serilog.sinks.periodicbatching\\4.0.0\\serilog.sinks.periodicbatching.4.0.0.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\serilog.sinks.seq\\7.0.0\\serilog.sinks.seq.7.0.0.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
@@ -123,6 +125,7 @@
     "C:\\Users\\oluwadara\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\system.threading.channels\\8.0.0\\system.threading.channels.8.0.0.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\oluwadara\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],

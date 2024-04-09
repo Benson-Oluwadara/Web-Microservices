@@ -8,32 +8,29 @@ namespace Mango.Services.EmailAPI.Extension
 {
     public static class ApplicationBuilderExtensions
     {
+        private static IAzureServiceBusConsumer ServiceBusConsumer { get; set; }
         public static IApplicationBuilder UseAzureServiceBusConsumer(this IApplicationBuilder app)
         {
-            var hostApplicationLife = app.ApplicationServices.GetRequiredService<IHostApplicationLifetime>();
 
-            hostApplicationLife.ApplicationStarted.Register(() => OnStart(app));
-            hostApplicationLife.ApplicationStopping.Register(() => OnStop(app));
+            ServiceBusConsumer = app.ApplicationServices.GetService<IAzureServiceBusConsumer>();
+            var hostApplicationLife = app.ApplicationServices.GetService<IHostApplicationLifetime>();
+
+            hostApplicationLife.ApplicationStarted.Register(OnStart);
+            hostApplicationLife.ApplicationStopping.Register(OnStop);
 
             return app;
         }
 
-        private static void OnStop(IApplicationBuilder app)
+        private static void OnStop()
         {
-            using (var scope = app.ApplicationServices.CreateScope())
-            {
-                var serviceBusConsumer = scope.ServiceProvider.GetRequiredService<IAzureServiceBusConsumer>();
-                serviceBusConsumer.Stop();
-            }
+              ServiceBusConsumer.Stop();
+            
         }
 
-        private static void OnStart(IApplicationBuilder app)
+        private static void OnStart()
         {
-            using (var scope = app.ApplicationServices.CreateScope())
-            {
-                var serviceBusConsumer = scope.ServiceProvider.GetRequiredService<IAzureServiceBusConsumer>();
-                serviceBusConsumer.Start();
-            }
+            ServiceBusConsumer.Start();
+            
         }
     }
 }

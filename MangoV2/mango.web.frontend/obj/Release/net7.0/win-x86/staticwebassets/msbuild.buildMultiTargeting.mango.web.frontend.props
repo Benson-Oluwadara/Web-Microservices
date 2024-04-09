@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\mango.web.frontend.props" />
+</Project>

@@ -4,16 +4,16 @@ using mango.web.frontend.Models;
 using mango.web.frontend.Services.Iservices;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-
+using Serilog;
 namespace mango.web.frontend.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly ILogger<ProductController> _logger;
+
         private readonly IProductService _productService;
-        public ProductController(ILogger<ProductController> logger,IProductService productService)
+        public ProductController(IProductService productService)
         {
-            _logger = logger;
+
             _productService = productService;
         }
         public IActionResult Index()
@@ -24,187 +24,232 @@ namespace mango.web.frontend.Controllers
         [HttpGet]
         public async Task<IActionResult> ProductIndex()
         {
-            Console.WriteLine("Product Index Method!!!!!!!!!!!!!!!!!!!!!!!!!!\n!!!!!!!!!!!!!!!!!!!!!");
-
-            List<ProductViewModel> list = new List<ProductViewModel>();
-            var response = await _productService.GetAllProductAsync<WebAPIResponse>();
-            _logger.LogInformation($"Response is: {JsonConvert.SerializeObject(response)}");
-            Console.WriteLine($"Response Content: {JsonConvert.SerializeObject(response)}");
-
-            if (response != null && response.IsSuccess)
+            try
             {
-                // Deserialize the JSON array into a List<CouponViewModel>
-                list = JsonConvert.DeserializeObject<List<ProductViewModel>>(response.Result.ToString()) ?? new List<ProductViewModel>();
-                foreach (var product in list)
+                Log.Information("Product Index Method called.");
+                List<ProductViewModel> list = new List<ProductViewModel>();
+                var response = await _productService.GetAllProductAsync<WebAPIResponse>();
+                Log.Information("Response from GetAllProductAsync: {@Response}", response);
+
+                if (response != null && response.IsSuccess)
                 {
-                    Console.WriteLine($"ProductID: {product.ProductId}, Product Name: {product.Name}");
+                    // Deserialize the JSON array into a List<CouponViewModel>
+                    list = JsonConvert.DeserializeObject<List<ProductViewModel>>(response.Result.ToString()) ?? new List<ProductViewModel>();
+                    return View(list);
+                }
+                else
+                {
+                    Log.Warning("Failed to retrieve products: {@Response}", response);
+                    TempData["error"] = "Failed to retrieve products";
+                    return View(new List<ProductViewModel>());
+
                 }
             }
-            return View(list);
+            catch (Exception ex)
+            {
+                Log.Error(ex, "An error occurred while accessing the Product Index page.");
+                TempData["error"] = "An unexpected error occurred.";
+                return View(new List<ProductViewModel>());
+            }
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateProduct(CreateProductDTO model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var response = await _productService.CreateProductAsync<WebAPIResponse>(model);
-                if (response != null && response.IsSuccess)
+                if (ModelState.IsValid)
                 {
-                    TempData["success"] = "Product Created Successfully";
-                    return RedirectToAction(nameof(ProductIndex));
+                    var response = await _productService.CreateProductAsync<WebAPIResponse>(model);
+                    Log.Information("Response from CreateProductAsync: {@Response}", response);
+
+                    if (response != null && response.IsSuccess)
+                    {
+                        TempData["success"] = "Product Created Successfully";
+                        return RedirectToAction(nameof(ProductIndex));
+                    }
+                    else
+                    {
+                        Log.Warning("Failed to create product: {@Response}", response);
+                        TempData["error"] = "Failed to create product";
+                    }
                 }
-                TempData["error"] = "Error Encountered";
+                else
+                {
+                    Log.Warning("Invalid model state when creating product.");
+                }
+
+                return View("CreateProduct", model);
             }
-
-            // Check if the view name matches the actual view file name
-            return View("CreateProduct", model);
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error occurred in CreateProduct action.");
+                TempData["error"] = "An unexpected error occurred.";
+                return View("CreateProduct", model);
+            }
         }
-
-
 
         public async Task<IActionResult> CreateProduct()
         {
             return View();
         }
 
-      
         public async Task<IActionResult> UpdateProduct(int productId)
         {
-            Console.WriteLine($"Update Product Method for ProductId: {productId} !!!!!!!!!!!!!!!!!!!!!!!!!!");
-
-            var response = await _productService.GetProductByIdAsync<WebAPIResponse>(productId);
-            _logger.LogInformation($"Response is: {JsonConvert.SerializeObject(response)}");
-
-            if (response != null && response.IsSuccess)
+            try
             {
-                var product = JsonConvert.DeserializeObject<ProductViewModel>(response.Result.ToString());
+                Log.Information($"Update Product Method called for ProductId: {productId}");
 
-                // Assuming you have an UpdateProductDTO model to bind to the form
-                var updateProductDto = new UpdateProductDTO
-                {
-                    ProductId = product.ProductId,
-                    Name = product.Name,
-                    Price = product.Price,
-                    Description = product.Description,
-                    CategoryName = product.CategoryName,
-                    ImageUrl = product.ImageUrl
-                    
-
-                };
-
-                return View(updateProductDto);
-            }
-            TempData["error"] = "Product not found.";
-            return RedirectToAction(nameof(ProductIndex));
-        }
-
-        [HttpPost]
-        //[Consumes("multipart/form-data")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UpdateProduct(int productId, [FromForm] UpdateProductDTO model)
-        {
-            Console.WriteLine("Update Product!!!!!!!!!!!!!!!!!!!!!!!!!!\n!!!!!!!!!!!!!!!!!!!!!");
-
-            if (ModelState.IsValid)
-            {
-                // Handle image upload if a new image is provided
-                
-
-                // Set the ProductId in the model
-                model.ProductId = productId;
-
-                // Call the service to update the product
-                var response = await _productService.UpdateProductAsync<WebAPIResponse>(model);
+                var response = await _productService.GetProductByIdAsync<WebAPIResponse>(productId);
+                Log.Information("Response from GetProductByIdAsync: {@Response}", response);
 
                 if (response != null && response.IsSuccess)
                 {
-                    TempData["success"] = "Product Updated Successfully";
+                    var product = JsonConvert.DeserializeObject<ProductViewModel>(response.Result.ToString());
+
+                    var updateProductDto = new UpdateProductDTO
+                    {
+                        ProductId = product.ProductId,
+                        Name = product.Name,
+                        Price = product.Price,
+                        Description = product.Description,
+                        CategoryName = product.CategoryName,
+                        ImageUrl = product.ImageUrl
+                    };
+
+                    return View(updateProductDto);
+                }
+                else
+                {
+                    Log.Warning("Product not found for ProductId: {ProductId}", productId);
+                    TempData["error"] = "Product not found.";
                     return RedirectToAction(nameof(ProductIndex));
                 }
-
-                TempData["error"] = "Error Encountered";
             }
-
-            return View(model);
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error occurred in UpdateProduct action for ProductId: {ProductId}", productId);
+                TempData["error"] = "An unexpected error occurred.";
+                return RedirectToAction(nameof(ProductIndex));
+            }
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdateProduct(int productId, [FromForm] UpdateProductDTO model)
+        {
+            try
+            {
+                Log.Information($"Update Product method called for ProductId: {productId}");
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> UpdateProduct(UpdateProductDTO model)
-        //{
-        //    Console.WriteLine("Update Product!!!!!!!!!!!!!!!!!!!!!!!!!!\n!!!!!!!!!!!!!!!!!!!!!");
+                if (ModelState.IsValid)
+                {
+                    model.ProductId = productId;
+                    var response = await _productService.UpdateProductAsync<WebAPIResponse>(model);
+                    Log.Information("Response from UpdateProductAsync: {@Response}", response);
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        var response = await _productService.UpdateProductAsync<WebAPIResponse>(model);
-        //        if (response != null && response.IsSuccess)
-        //        {
-        //            TempData["success"] = "Product Updated Successfully";
-        //            return RedirectToAction(nameof(ProductIndex));
-        //        }
+                    if (response != null && response.IsSuccess)
+                    {
+                        TempData["success"] = "Product Updated Successfully";
+                        return RedirectToAction(nameof(ProductIndex));
+                    }
+                    else
+                    {
+                        Log.Warning("Failed to update product for ProductId: {ProductId}", productId);
+                        TempData["error"] = "Failed to update product.";
+                    }
+                }
+                else
+                {
+                    Log.Warning("Invalid model state when updating product for ProductId: {ProductId}", productId);
+                }
 
-        //        TempData["error"] = "Error Encountered";
-        //    }
-
-        //    return View(model);
-        //}
-
-        
-
-        
-
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error occurred in UpdateProduct action for ProductId: {ProductId}", productId);
+                TempData["error"] = "An unexpected error occurred.";
+                return View(model);
+            }
+        }
 
         [HttpGet]
         public async Task<IActionResult> DeleteProduct(int productId)
         {
-            Console.WriteLine($"Delete Product Method for ProductId: {productId} !!!!!!!!!!!!!!!!!!!!!!!!!!");
-
-            var response = await _productService.GetProductByIdAsync<WebAPIResponse>(productId);
-
-            if (response != null && response.IsSuccess)
+            try
             {
-                var product = JsonConvert.DeserializeObject<ProductViewModel>(response.Result.ToString());
+                Log.Information($"Delete Product Method called for ProductId: {productId}");
 
-                // Assuming you have a DeleteProductDTO model to bind to the form
-                var deleteProductDto = new DeleteProductDTO
+                var response = await _productService.GetProductByIdAsync<WebAPIResponse>(productId);
+
+                if (response != null && response.IsSuccess)
                 {
-                    ProductId = product.ProductId,
-                    Name = product.Name,
-                    Price = product.Price,
-                    Description = product.Description,
-                    CategoryName = product.CategoryName,
-                    ImageUrl = product.ImageUrl
-                    
-                };
+                    var product = JsonConvert.DeserializeObject<ProductViewModel>(response.Result.ToString());
 
-                return View(deleteProductDto);
+                    var deleteProductDto = new DeleteProductDTO
+                    {
+                        ProductId = product.ProductId,
+                        Name = product.Name,
+                        Price = product.Price,
+                        Description = product.Description,
+                        CategoryName = product.CategoryName,
+                        ImageUrl = product.ImageUrl
+                    };
+
+                    return View(deleteProductDto);
+                }
+                else
+                {
+                    Log.Warning("Product not found for ProductId: {ProductId}", productId);
+                    TempData["error"] = "Product not found.";
+                    return RedirectToAction(nameof(ProductIndex));
+                }
             }
-
-            TempData["error"] = "Product not found.";
-            return RedirectToAction(nameof(ProductIndex));
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error occurred in DeleteProduct action for ProductId: {ProductId}", productId);
+                TempData["error"] = "An unexpected error occurred.";
+                return RedirectToAction(nameof(ProductIndex));
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteProduct(DeleteProductDTO model)
         {
-            Console.WriteLine("Delete Product!!!!!!!!!!!!!!!!!!!!!!!!!!\n!!!!!!!!!!!!!!!!!!!!!");
-
-            if (ModelState.IsValid)
+            try
             {
-                var response = await _productService.DeleteProductAsync<WebAPIResponse>(model.ProductId);
-                if (response != null && response.IsSuccess)
+                Log.Information("Delete Product method called");
+
+                if (ModelState.IsValid)
                 {
-                    TempData["success"] = "Product Deleted Successfully";
-                    return RedirectToAction(nameof(ProductIndex));
+                    var response = await _productService.DeleteProductAsync<WebAPIResponse>(model.ProductId);
+
+                    if (response != null && response.IsSuccess)
+                    {
+                        TempData["success"] = "Product Deleted Successfully";
+                        return RedirectToAction(nameof(ProductIndex));
+                    }
+                    else
+                    {
+                        Log.Warning("Failed to delete product for ProductId: {ProductId}", model.ProductId);
+                        TempData["error"] = "Failed to delete product.";
+                    }
+                }
+                else
+                {
+                    Log.Warning("Invalid model state when deleting product");
                 }
 
-                TempData["error"] = "Error Encountered";
+                return View(model);
             }
-
-            return View(model);
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error occurred in DeleteProduct action for ProductId: {ProductId}", model.ProductId);
+                TempData["error"] = "An unexpected error occurred.";
+                return View(model);
+            }
         }
     }
-}
+    }

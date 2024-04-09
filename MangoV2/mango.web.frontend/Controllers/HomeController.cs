@@ -7,17 +7,18 @@ using IdentityModel;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using Serilog;
 
 namespace mango.web.frontend.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        
         private readonly IProductService _productService;
         private readonly ICartService _cartService;
-        public HomeController(ILogger<HomeController> logger, IProductService productservice, ICartService cartService)
+        public HomeController( IProductService productservice, ICartService cartService)
         {
-            _logger = logger;
+            
             _productService = productservice;
             _cartService = cartService;
 
@@ -25,21 +26,26 @@ namespace mango.web.frontend.Controllers
 
         public async Task<IActionResult> Index()
         {
-            List<ProductViewModel> list = new List<ProductViewModel>();
-            var response = await _productService.GetAllProductAsync<WebAPIResponse>();
-            _logger.LogInformation($"Response is: {JsonConvert.SerializeObject(response)}");
-            //Console.WriteLine($"Response Content: {JsonConvert.SerializeObject(response)}");
-
-            if (response != null && response.IsSuccess)
+            try
             {
-                // Deserialize the JSON array into a List<CouponViewModel>
-                list = JsonConvert.DeserializeObject<List<ProductViewModel>>(response.Result.ToString()) ?? new List<ProductViewModel>();
-                //foreach (var product in list)
-                //{
-                //    Console.WriteLine($"ProductID: {product.ProductId}, Product Name: {product.Name}");
-                //}
+                List<ProductViewModel> list = new List<ProductViewModel>();
+                var response = await _productService.GetAllProductAsync<WebAPIResponse>();
+                Log.Information($"Response is: {JsonConvert.SerializeObject(response)}");
+                //Console.WriteLine($"Response Content: {JsonConvert.SerializeObject(response)}");
+
+                if (response != null && response.IsSuccess)
+                {
+                    // Deserialize the JSON array into a List<CouponViewModel>
+                    list = JsonConvert.DeserializeObject<List<ProductViewModel>>(response.Result.ToString()) ?? new List<ProductViewModel>();
+                    
+                }
+                return View(list);
             }
-            return View(list);
+            catch (Exception ex)
+            {
+                Log.Error(ex, "An error occurred while accessing the Home page.");
+                throw; // You may handle the exception according to your application's error handling strategy
+            }
         }
         //post
         //[HttpPost]
@@ -123,15 +129,15 @@ namespace mango.web.frontend.Controllers
                 List<CartDetailsDTO> cartDetailsDtos = new() { cartDetails };
                 cartDto.CartDetails = cartDetailsDtos;
 
-                _logger.LogInformation($"Constructed CartDTO: {JsonConvert.SerializeObject(cartDto)}");
-                _logger.LogInformation($"ProductDTO Details: {JsonConvert.SerializeObject(productDto)}");
+                Log.Information($"Constructed CartDTO: {JsonConvert.SerializeObject(cartDto)}");
+                Log.Information($"ProductDTO Details: {JsonConvert.SerializeObject(productDto)}");
 
                 var response = await _cartService.UpsertCartAsync<WebAPIResponse>(cartDto);
-                _logger.LogInformation($"UpsertCart Response: {JsonConvert.SerializeObject(response)}");
+                Log.Information($"UpsertCart Response: {JsonConvert.SerializeObject(response)}");
 
                 if (response != null && response.IsSuccess)
                 {
-                    _logger.LogInformation("Item has been added to the Shopping Cart");
+                    Log.Information("Item has been added to the Shopping Cart");
                     TempData["success"] = "Item has been added to the Shopping Cart";
                     return RedirectToAction(nameof(Index));
                 }
@@ -142,7 +148,7 @@ namespace mango.web.frontend.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error while processing cart request.");
+                Log.Error(ex, "Error while processing cart request.");
                 TempData["error"] = "An unexpected error occurred.";
             }
 
@@ -155,7 +161,7 @@ namespace mango.web.frontend.Controllers
             {
                 ProductDTO productDto = new ProductDTO();
                 var response = await _productService.GetProductByIdAsync<WebAPIResponse>(productId);
-                _logger.LogInformation($"Response is: {JsonConvert.SerializeObject(response)}");
+                Log.Information($"Response is: {JsonConvert.SerializeObject(response)}");
                 //Console.WriteLine($"Response Content: {JsonConvert.SerializeObject(response)}");
 
                 if (response != null && response.IsSuccess)
@@ -171,7 +177,7 @@ namespace mango.web.frontend.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error while processing product details request.");
+                Log.Error(ex, "Error while processing product details request.");
                 TempData["error"] = "An unexpected error occurred.";
                 return View(new ProductDTO()); // or handle the error accordingly
             }

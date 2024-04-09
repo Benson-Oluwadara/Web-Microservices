@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "JpLAZV82frxNiOiYJwIbl8zAcXlpHal0sNeUFz16/1jbpDIGkNdkCqU41zw6kEOlLq2vMzr9Bqe0vdZOCu1pkw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\oluwadara\\Desktop\\Mango V2\\MangoV2\\Mango.GatewayServices\\Mango.GatewayServices.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\oluwadara\\.nuget\\packages\\fluentvalidation\\11.8.0\\fluentvalidation.11.8.0.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\ipaddressrange\\6.0.0\\ipaddressrange.6.0.0.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.14\\microsoft.aspnetcore.authentication.jwtbearer.7.0.14.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.14\\microsoft.aspnetcore.jsonpatch.7.0.14.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.aspnetcore.middlewareanalysis\\7.0.14\\microsoft.aspnetcore.middlewareanalysis.7.0.14.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.14\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.14.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.extensions.diagnosticadapter\\3.1.32\\microsoft.extensions.diagnosticadapter.3.1.32.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.15.1\\microsoft.identitymodel.jsonwebtokens.6.15.1.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.identitymodel.logging\\6.15.1\\microsoft.identitymodel.logging.6.15.1.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.15.1\\microsoft.identitymodel.protocols.6.15.1.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.15.1\\microsoft.identitymodel.protocols.openidconnect.6.15.1.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.15.1\\microsoft.identitymodel.tokens.6.15.1.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\ocelot\\23.2.0\\ocelot.23.2.0.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.15.1\\system.identitymodel.tokens.jwt.6.15.1.nupkg.sha512",
+    "C:\\Users\\oluwadara\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

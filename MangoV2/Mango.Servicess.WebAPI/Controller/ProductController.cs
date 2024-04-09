@@ -5,6 +5,7 @@ using Mango.Services.ProductAPI.Service.IService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using Serilog;
 
 namespace Mango.Services.ProductAPI.Controller
 {
@@ -24,53 +25,96 @@ namespace Mango.Services.ProductAPI.Controller
         [HttpGet]
         public async Task<IActionResult> GetAllProducts()
         {
-            var products = await _productService.GetAllProductAsync();
-            return Ok(new APIResponse(HttpStatusCode.OK, true, _mapper.Map<IEnumerable<ProductDTO>>(products)));
+            try
+            {
+                var products = await _productService.GetAllProductAsync();
+                Log.Information("Returning all products.");
+                return Ok(new APIResponse(HttpStatusCode.OK, true, _mapper.Map<IEnumerable<ProductDTO>>(products)));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error occurred while retrieving all products.");
+                return StatusCode(StatusCodes.Status500InternalServerError, new APIResponse(HttpStatusCode.InternalServerError, false, null, new List<string> { "An error occurred while processing your request." }));
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProductById(int id)
         {
-            var product = await _productService.GetProductByIdAsync(id);
-
-            if (product == null)
+            try
             {
-                return NotFound(new APIResponse(HttpStatusCode.NotFound, false, null, new List<string> { "Product not found." }));
-            }
+                var product = await _productService.GetProductByIdAsync(id);
 
-            return Ok(new APIResponse(HttpStatusCode.OK, true, _mapper.Map<ProductDTO>(product)));
+                if (product == null)
+                {
+                    Log.Warning("Product with ID {ProductId} not found.", id);
+                    return NotFound(new APIResponse(HttpStatusCode.NotFound, false, null, new List<string> { "Product not found." }));
+                }
+                Log.Information("Returning product with ID {ProductId}.", id);
+
+                return Ok(new APIResponse(HttpStatusCode.OK, true, _mapper.Map<ProductDTO>(product)));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "An error occurred while retrieving product with ID {ProductId}.", id);
+                return StatusCode(StatusCodes.Status500InternalServerError, new APIResponse(HttpStatusCode.InternalServerError, false, null, new List<string> { "An error occurred while processing your request." }));
+            }
         }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductUpdateDTO updateProductDto)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(new APIResponse(HttpStatusCode.BadRequest, false, null, GetModelStateErrorMessages()));
+                if (!ModelState.IsValid)
+                {
+                    Log.Warning("Invalid model state while updating product with ID {ProductId}.", id);
+                    return BadRequest(new APIResponse(HttpStatusCode.BadRequest, false, null, GetModelStateErrorMessages()));
+                }
+
+                var isUpdated = await _productService.UpdateProductAsync(id, updateProductDto);
+
+                if (!isUpdated)
+                {
+                    Log.Warning("Product with ID {ProductId} not found during update operation.", id);
+                    return NotFound(new APIResponse(HttpStatusCode.NotFound, false, null, new List<string> { "Product not found." }));
+                }
+
+                Log.Information("Product with ID {ProductId} updated successfully.", id);
+                return Ok(new APIResponse(HttpStatusCode.OK, true, null));
             }
-
-            var isUpdated = await _productService.UpdateProductAsync(id, updateProductDto);
-
-            if (!isUpdated)
+            catch (Exception ex)
             {
-                return NotFound(new APIResponse(HttpStatusCode.NotFound, false, null, new List<string> { "Product not found." }));
+                Log.Error(ex, "An error occurred while updating product with ID {ProductId}.", id);
+                return StatusCode(StatusCodes.Status500InternalServerError, new APIResponse(HttpStatusCode.InternalServerError, false, null, new List<string> { "An error occurred while processing your request." }));
             }
-
-            return Ok(new APIResponse(HttpStatusCode.OK, true, null));
         }
+
 
 
         [HttpPost]
         public async Task<IActionResult> CreateProduct([FromBody] ProductCreateDTO createProductDto)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(new APIResponse(HttpStatusCode.BadRequest, false, null, GetModelStateErrorMessages()));
+                if (!ModelState.IsValid)
+                {
+                    Log.Warning("Invalid model state received while creating a new product.");
+                    return BadRequest(new APIResponse(HttpStatusCode.BadRequest, false, null, GetModelStateErrorMessages()));
+                }
+
+                var createdProduct = await _productService.CreateProductAsync(createProductDto);
+
+                Log.Information("Product created successfully. Product ID: {ProductId}", createdProduct.ProductId);
+                return CreatedAtAction(nameof(GetProductById), new { id = createdProduct.ProductId }, new APIResponse(HttpStatusCode.Created, true, _mapper.Map<ProductDTO>(createdProduct)));
             }
-
-            var createdProduct = await _productService.CreateProductAsync(createProductDto);
-
-            return CreatedAtAction(nameof(GetProductById), new { id = createdProduct.ProductId }, new APIResponse(HttpStatusCode.Created, true, _mapper.Map<ProductDTO>(createdProduct)));
+            catch (Exception ex)
+            {
+                Log.Error(ex, "An error occurred while creating a new product.");
+                return StatusCode(StatusCodes.Status500InternalServerError, new APIResponse(HttpStatusCode.InternalServerError, false, null, new List<string> { "An error occurred while processing your request." }));
+            }
         }
+
 
         //[HttpPut("{id}")]
         //public async Task<IActionResult> UpdateProduct(int id, [FromBody] UpdateProductDTO updateProductDto)
@@ -93,18 +137,30 @@ namespace Mango.Services.ProductAPI.Controller
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            var isDeleted = await _productService.DeleteProductAsync(id);
-
-            if (!isDeleted)
+            try
             {
-                return NotFound(new APIResponse(HttpStatusCode.NotFound, false, null, new List<string> { "Product not found." }));
-            }
+                var isDeleted = await _productService.DeleteProductAsync(id);
 
-            return Ok(new APIResponse(HttpStatusCode.OK, true, null));
+                if (!isDeleted)
+                {
+                    Log.Warning("Product with ID {ProductId} not found during deletion.", id);
+                    return NotFound(new APIResponse(HttpStatusCode.NotFound, false, null, new List<string> { "Product not found." }));
+                }
+
+                Log.Information("Product with ID {ProductId} deleted successfully.", id);
+                return Ok(new APIResponse(HttpStatusCode.OK, true, null));
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "An error occurred while deleting the product with ID {ProductId}.", id);
+                return StatusCode(StatusCodes.Status500InternalServerError, new APIResponse(HttpStatusCode.InternalServerError, false, null, new List<string> { "An error occurred while processing your request." }));
+            }
         }
+
 
         private List<string> GetModelStateErrorMessages()
         {
+            Log.Warning("Returning model state error messages.");   
             return ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage)).ToList();
         }
     }

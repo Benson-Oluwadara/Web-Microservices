@@ -2,7 +2,7 @@
 using Mango.Services.EmailAPI.Message;
 using Mango.Services.EmailAPI.Models;
 using Mango.Services.EmailAPI.Models.DTO;
-using Mango.Services.EmailAPI.Repository.IRepository;
+
 using Mango.Services.EmailAPI.Services.IServices;
 using Microsoft.AspNetCore.SignalR;
 using System.Text;
@@ -73,7 +73,13 @@ namespace Mango.Services.EmailAPI.Services.Services
                     Message = message
                 };
 
-                await _dapperRepository.ExecuteStoredProcedureAsync<object>("CreateEmailAsync", new { Email = email, Message = message, EmailSent = DateTime.Now });
+                var sql = @"
+            INSERT INTO EmailLogger (Email, Message, EmailSent) 
+            VALUES (@Email, @Message, @EmailSent);
+            SELECT CAST(SCOPE_IDENTITY() as int)";
+
+                await _dapperRepository.ExecuteAsync(sql, emailLog);
+
                 return true;
             }
             catch (Exception ex)

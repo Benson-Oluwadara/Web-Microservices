@@ -1,7 +1,6 @@
 ﻿using Mango.Services.EmailAPI.Database.DapperRepositorys;
 using Mango.Services.EmailAPI.Database.IDapperRepositorys;
-using Mango.Services.EmailAPI.Repository.IRepository;
-using Mango.Services.EmailAPI.Repository.Repository;
+
 using Mango.Services.EmailAPI.Services.IServices;
 using Mango.Services.EmailAPI.Services.Services;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Mango.Services.EmailAPI.Messaging;
 using Mango.Services.EmailAPI.Extension;
+using mango.messagebus;
 
 namespace Mango.Services.EmailAPI
 {
@@ -54,11 +54,21 @@ namespace Mango.Services.EmailAPI
            var key = Configuration.GetValue<string>("ApiSettings:Secret");
             services.AddAuthentication();
             services.AddTransient<IDbConnection>(_ => new SqlConnection(Configuration.GetConnectionString("SqlConnection")));
-            services.AddScoped<IDapperRepository, DapperRepository>();
-            services.AddScoped<IEmailRepository, EmailRepository>();
-            services.AddScoped<IEmailService, EmailService>();
-            services.AddScoped<IAzureServiceBusConsumer, AzureServiceBusConsumer>(); // Change to scoped if necessary
-            services.AddControllers();
+            services.AddSingleton<IDapperRepository, DapperRepository>();
+            //services.AddScoped<IEmailRepository, EmailRepository>();
+            //services.AddScoped<IEmailService,EmailService>();
+            services.AddSingleton<IAzureServiceBusConsumer, AzureServiceBusConsumer>(); // Change to scoped if necessary
+            services.AddScoped<IMessageBus, MessageBus>();
+            // Manually set EmailService property after instantiation
+            //services.AddSingleton(provider =>
+            //{
+            //    var consumer = provider.GetService<IAzureServiceBusConsumer>();
+            //    var emailService = provider.GetService<IEmailService>();
+            //    consumer.EmailService = emailService;
+            //    return consumer;
+            //});
+
+         services.AddControllers();
 
         }
 
@@ -67,19 +77,24 @@ namespace Mango.Services.EmailAPI
     {
 
 
-        if (env.IsDevelopment())
-        {
-            app.UseDeveloperExceptionPage();
-            app.UseSwagger();
+        //if (env.IsDevelopment())
+        //{
+            //app.UseDeveloperExceptionPage();
+            //app.UseSwagger();
             app.UseSwaggerUI();
-        }
-        else
-        {
-            app.UseExceptionHandler("/Error");
-            app.UseHsts();
-        }
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "EmailAPI v1");
+                c.RoutePrefix = string.Empty;
+            });
+            //}
+            //else
+            //{
+            //    app.UseExceptionHandler("/Error");
+            //    app.UseHsts();
+            //}
 
-        app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
         app.UseRouting();
         app.UseAuthentication(); // This is for Authentication
         app.UseAuthorization();

@@ -1275,3 +1275,501 @@ System.InvalidOperationException: No authenticationScheme was specified, and the
 03/18/2024 17:33:46 Application is starting 
 03/18/2024 17:36:59 Application is starting 
 03/18/2024 17:38:44 Application is starting 
+03/22/2024 08:39:51 Application is starting 
+03/22/2024 09:56:32 Application is starting 
+03/22/2024 09:58:10 Application is starting 
+03/22/2024 09:59:55 Application is starting 
+03/22/2024 10:01:09 Application is starting 
+03/22/2024 10:05:40 Application is starting 
+03/22/2024 10:06:22 Application is starting 
+03/22/2024 10:06:55 Application is starting 
+03/22/2024 10:16:02 Application is starting 
+03/22/2024 10:27:26 Application is starting 
+03/22/2024 10:57:01 Application is starting 
+03/22/2024 11:00:43 Application is starting 
+03/22/2024 11:02:03 Application is starting 
+03/22/2024 11:10:17 Application is starting 
+03/22/2024 11:25:27 Application is starting 
+03/22/2024 11:27:32 Application is starting 
+03/22/2024 12:58:29 Application is starting 
+03/22/2024 12:59:06 Application is starting 
+03/22/2024 13:09:13 Application is starting 
+03/22/2024 13:09:57 Application is starting 
+03/22/2024 13:11:47 Application is starting 
+03/22/2024 13:12:01 Application is starting 
+03/22/2024 13:15:13 Application is starting 
+03/22/2024 13:21:32 Application is starting 
+03/22/2024 13:27:35 Application is starting 
+03/22/2024 13:33:01 Application is starting 
+03/22/2024 13:37:31 Application is starting 
+03/22/2024 13:38:29 Application is starting 
+03/22/2024 13:42:18 Application is starting 
+03/22/2024 13:50:46 Application is starting 
+03/22/2024 13:52:06 Application is starting 
+03/22/2024 15:09:09 Application is starting 
+03/22/2024 15:09:34 Application is starting 
+03/22/2024 15:10:08 Application is starting 
+03/22/2024 15:10:39 Application is starting 
+03/22/2024 15:11:01 Application is starting 
+03/22/2024 15:12:24 Application is starting 
+03/22/2024 15:16:17 Application is starting 
+03/22/2024 15:16:50 Application is starting 
+03/22/2024 15:17:07 Application is starting 
+03/22/2024 15:24:15 Application is starting 
+03/22/2024 15:32:43 Application is starting 
+03/22/2024 15:33:09 Application is starting 
+03/22/2024 15:35:25 Application is starting 
+03/22/2024 15:40:49 Application is starting 
+03/22/2024 15:46:16 Application is starting 
+03/22/2024 15:47:03 Application is starting 
+03/22/2024 15:48:29 Application is starting 
+03/22/2024 15:49:36 Application is starting 
+03/22/2024 15:49:57 Application is starting 
+03/22/2024 15:51:09 Application is starting 
+03/22/2024 15:53:21 Application is starting 
+03/22/2024 15:54:37 Application is starting 
+03/22/2024 15:58:45 Application is starting 
+03/22/2024 15:59:11 Application is starting 
+03/22/2024 16:02:55 Application is starting 
+03/22/2024 16:03:48 Application is starting 
+03/22/2024 16:04:28 Application is starting 
+03/22/2024 16:05:25 Application is starting 
+03/22/2024 16:09:37 Application is starting 
+03/22/2024 16:10:36 Application is starting 
+03/22/2024 16:12:50 Application is starting 
+03/22/2024 16:14:10 Application is starting 
+03/22/2024 16:21:12 Application is starting 
+03/22/2024 16:23:02 Application is starting 
+03/22/2024 16:23:58 Application is starting 
+03/22/2024 16:27:06 Application is starting 
+03/22/2024 16:28:34 Application is starting 
+03/22/2024 16:32:16 Application is starting 
+03/22/2024 16:32:30 Application is starting 
+03/22/2024 16:40:51 Application is starting 
+03/22/2024 21:35:46 Application is starting 
+03/22/2024 21:49:49 Application is starting 
+03/22/2024 21:52:41 Application is starting 
+03/22/2024 22:12:06 Application is starting 
+03/22/2024 22:12:46 Application is starting 
+03/22/2024 22:13:05 Application is starting 
+03/22/2024 22:14:35 Application is starting 
+03/22/2024 22:16:46 Application is starting 
+03/22/2024 22:22:53 Application is starting 
+03/22/2024 23:06:08 Application is starting 
+03/22/2024 23:07:48 Application is starting 
+03/22/2024 23:23:17 Application is starting 
+03/22/2024 23:43:27 Application is starting 
+03/22/2024 23:46:17 Application is starting 
+03/22/2024 23:50:53 Application is starting 
+03/22/2024 23:51:43 Application is starting 
+03/22/2024 23:54:27 Application is starting 
+03/22/2024 23:56:25 Application is starting 
+03/22/2024 23:58:37 Application is starting 
+03/23/2024 00:02:05 Application is starting 
+03/23/2024 00:07:25 Application is starting 
+03/23/2024 00:07:54 Application is starting 
+03/23/2024 00:08:40 Application is starting 
+03/23/2024 00:09:36 Application is starting 
+03/23/2024 00:12:05 Application is starting 
+03/23/2024 00:13:49 Application is starting 
+03/23/2024 00:14:24 Application is starting 
+03/23/2024 00:20:27 Application is starting 
+03/23/2024 00:25:03 Application is starting 
+03/23/2024 00:25:57 Application is starting 
+03/23/2024 00:31:06 Application is starting 
+03/23/2024 00:33:51 Application is starting 
+03/23/2024 00:37:27 Application is starting 
+03/23/2024 00:49:09 Application is starting 
+03/23/2024 00:55:34 Application is starting 
+03/23/2024 01:08:49 Application is starting 
+03/23/2024 01:19:41 Application is starting 
+03/23/2024 01:22:25 Application is starting 
+03/23/2024 02:18:31 Application is starting 
+03/23/2024 02:20:24 Application is starting 
+03/23/2024 02:21:13 Application is starting 
+03/23/2024 02:36:20 Application is starting 
+03/23/2024 10:38:12 Application is starting 
+03/23/2024 10:56:04 Application is starting 
+03/23/2024 11:02:04 Application is starting 
+03/23/2024 11:06:28 Application is starting 
+03/23/2024 11:24:15 Application is starting 
+03/23/2024 11:32:52 Application is starting 
+03/23/2024 11:39:34 Application is starting 
+03/23/2024 11:49:53 Application is starting 
+03/23/2024 11:58:42 Application is starting 
+03/23/2024 12:31:31 Application is starting 
+03/23/2024 12:36:06 Application is starting 
+03/23/2024 13:11:23 Application is starting 
+03/23/2024 13:36:21 Application is starting 
+03/25/2024 09:06:40 Application is starting 
+03/25/2024 09:33:20 Application is starting 
+03/25/2024 10:40:35 Application is starting 
+03/25/2024 14:00:07 Application is starting 
+03/25/2024 14:21:03 Application is starting 
+03/25/2024 14:26:14 Application is starting 
+03/25/2024 14:31:52 Application is starting 
+03/25/2024 14:37:14 Application is starting 
+03/25/2024 14:48:39 Application is starting 
+03/25/2024 14:57:59 Application is starting 
+03/25/2024 15:00:21 Application is starting 
+03/26/2024 10:13:21 Application is starting 
+03/26/2024 10:55:23 Application is starting 
+03/26/2024 10:59:29 Application is starting 
+03/26/2024 11:30:48 Application is starting 
+03/26/2024 11:40:46 Application is starting 
+03/26/2024 11:53:43 Application is starting 
+03/26/2024 11:55:53 Application is starting 
+03/26/2024 11:56:37 Application is starting 
+03/26/2024 12:29:32 Application is starting 
+03/26/2024 13:15:35 Application is starting 
+03/26/2024 13:20:07 Application is starting 
+03/26/2024 13:44:34 Application is starting 
+03/26/2024 19:37:35 Application is starting 
+03/26/2024 19:43:55 Application is starting 
+03/26/2024 19:53:28 Application is starting 
+04/01/2024 12:19:31 Application is starting 
+04/02/2024 22:45:35 Application is starting 
+04/02/2024 23:10:48 Application is starting 
+04/02/2024 23:21:59 Application is starting 
+04/02/2024 23:27:24 Application is starting 
+04/02/2024 23:31:01 Application is starting 
+04/02/2024 23:36:26 Application is starting 
+04/02/2024 23:42:47 Application is starting 
+04/02/2024 23:43:25 Application is starting 
+04/03/2024 00:01:08 Application is starting 
+04/03/2024 08:36:55 Application is starting 
+04/03/2024 09:27:16 Application is starting 
+04/03/2024 09:29:42 Application is starting 
+04/03/2024 10:08:38 Application is starting 
+04/03/2024 10:11:33 Application is starting 
+04/03/2024 10:48:43 Application is starting 
+04/03/2024 12:53:12 Application is starting 
+04/04/2024 11:18:15 Application is starting 
+04/04/2024 14:41:57 Application is starting 
+04/04/2024 14:44:44 Application is starting 
+04/04/2024 14:57:04 Application is starting 
+04/04/2024 15:24:49 Application is starting 
+04/05/2024 09:56:33 Application is starting 
+04/05/2024 09:59:57 Application is starting 
+04/05/2024 10:01:34 Application is starting 
+04/05/2024 10:06:47 Application is starting 
+04/05/2024 10:08:44 Application is starting 
+04/05/2024 11:45:20 Application is starting 
+04/05/2024 11:46:02 Returning all coupons 
+04/05/2024 11:47:02 Returning coupon with id 2 
+04/05/2024 11:52:21 Application is starting 
+04/05/2024 11:55:34 Application is starting 
+04/05/2024 13:18:45 Application is starting 
+04/05/2024 13:19:09 Returning all coupons 
+04/05/2024 13:33:15 Application is starting 
+04/05/2024 13:33:42 CartHeader retrieved successfully. CartHeaderId: 1, UserId: "string", CouponCode: null 
+04/05/2024 13:33:42 Retrieving details for CartDetailsId: 2, CartHeaderId: 1, ProductId: 3, Count: 33 
+04/05/2024 13:33:42 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 13:33:42 Total Price for 33 "Product 3"(s): 1319.67 
+04/05/2024 13:34:49 Cart not found for user with ID "strings". 
+04/05/2024 13:35:16 Cart Upsert Successful! 
+04/05/2024 13:35:16 Cart Details: 
+04/05/2024 13:35:16 Product ID: 0, Count: 0 
+04/05/2024 13:36:22 Cart item removed successfully. 
+04/05/2024 13:36:28 Cart item removed successfully. 
+04/05/2024 13:36:36 Cart item removed successfully. 
+04/05/2024 13:36:49 Cart not found for user with ID "strings". 
+04/05/2024 13:36:54 CartHeader retrieved successfully. CartHeaderId: 1, UserId: "string", CouponCode: null 
+04/05/2024 13:36:54 Retrieving details for CartDetailsId: 2, CartHeaderId: 1, ProductId: 3, Count: 33 
+04/05/2024 13:36:54 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 13:36:54 Total Price for 33 "Product 3"(s): 1319.67 
+04/05/2024 13:36:54 Retrieving details for CartDetailsId: 15, CartHeaderId: 1, ProductId: 0, Count: 0 
+04/05/2024 13:36:54 Product not found for ProductId: 0 
+04/05/2024 13:38:59 Application is starting 
+04/05/2024 13:43:09 Application is starting 
+04/05/2024 13:58:38 Application is starting 
+04/05/2024 14:14:57 Application is starting 
+04/05/2024 14:15:42 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 14:15:42 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 14:15:42 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 14:15:42 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 14:15:42 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 14:15:42 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 14:15:42 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 14:15:42 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 14:15:42 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 14:15:42 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 14:15:42 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 14:15:42 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 14:15:42 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 14:15:42 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 14:15:42 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 14:15:42 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 14:15:42 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 14:15:42 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 14:15:42 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 14:18:43 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 14:18:43 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 14:18:43 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 14:18:43 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 14:18:43 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 14:18:43 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 14:18:43 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 14:18:43 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 14:18:43 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 14:18:43 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 14:18:43 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 14:18:43 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 14:18:43 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 14:18:43 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 14:18:43 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 14:18:43 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 14:18:43 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 14:18:43 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 14:18:43 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 14:19:45 Application is starting 
+04/05/2024 14:30:39 Application is starting 
+04/05/2024 14:33:24 Application is starting 
+04/05/2024 14:39:15 Application is starting 
+04/05/2024 14:45:11 Application is starting 
+04/05/2024 14:51:19 Application is starting 
+04/05/2024 14:56:15 Application is starting 
+04/05/2024 14:58:36 Application is starting 
+04/05/2024 15:03:35 Application is starting 
+04/05/2024 15:12:47 Application is starting 
+04/05/2024 15:22:10 Application is starting 
+04/05/2024 15:24:41 Application is starting 
+04/05/2024 15:26:15 Application is starting 
+04/05/2024 15:41:57 Application is starting 
+04/05/2024 15:50:24 Application is starting 
+04/05/2024 15:52:42 Application is starting 
+04/05/2024 15:59:59 Application is starting 
+04/05/2024 16:07:26 Application is starting 
+04/05/2024 16:08:04 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 16:08:04 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 16:08:04 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 16:08:04 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 16:08:04 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 16:08:04 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 16:08:04 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 16:08:04 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 16:08:04 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 16:08:04 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 16:08:04 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 16:08:04 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:08:04 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 16:08:04 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 16:08:04 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:08:04 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 16:08:04 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 16:08:04 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 16:08:04 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 16:08:39 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 16:08:39 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 16:08:39 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 16:08:39 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 16:08:39 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 16:08:39 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 16:08:39 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 16:08:39 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 16:08:39 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 16:08:39 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 16:08:39 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 16:08:39 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:08:39 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 16:08:40 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 16:08:40 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:08:40 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 16:08:40 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 16:08:40 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 16:08:40 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 16:08:46 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 16:08:46 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 16:08:46 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 16:08:46 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 16:08:46 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 16:08:46 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 16:08:46 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 16:08:46 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 16:08:46 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 16:08:46 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 16:08:46 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 16:08:46 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:08:46 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 16:08:46 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 16:08:46 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:08:46 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 16:08:46 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 16:08:46 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 16:08:46 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 16:08:50 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 16:08:50 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 16:08:50 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 16:08:50 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 16:08:50 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 16:08:50 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 16:08:50 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 16:08:50 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 16:08:50 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 16:08:50 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 16:08:50 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 16:08:50 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:08:50 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 16:08:50 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 16:08:50 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:08:50 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 16:08:50 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 16:08:50 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 16:08:50 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 16:09:22 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 16:09:22 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 16:09:22 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 16:09:22 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 16:09:22 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 16:09:22 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 16:09:22 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 16:09:22 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 16:09:22 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 16:09:22 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 16:09:22 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 16:09:22 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:09:22 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 16:09:22 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 16:09:22 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:09:22 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 16:09:22 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 16:09:22 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 16:09:22 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 16:09:28 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 16:09:28 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 16:09:28 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 16:09:28 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 16:09:28 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 16:09:28 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 16:09:28 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 16:09:28 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 16:09:28 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 16:09:28 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 16:09:28 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 16:09:28 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:09:28 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 16:09:28 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 16:09:28 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:09:28 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 16:09:28 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 16:09:28 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 16:09:28 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 16:09:29 Cart sent via email successfully. 
+04/05/2024 16:09:29 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 16:09:29 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 16:09:29 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 16:09:29 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 16:09:29 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 16:09:29 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 16:09:29 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 16:09:29 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 16:09:29 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 16:09:29 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 16:09:29 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 16:09:29 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:09:29 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 16:09:29 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 16:09:29 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 16:09:29 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 16:09:29 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 16:09:29 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 16:09:29 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 16:18:47 Application is starting 
+04/05/2024 16:20:31 Application is starting 
+04/05/2024 17:04:43 Application is starting 
+04/05/2024 17:05:47 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 17:05:47 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 17:05:47 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 17:05:47 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 17:05:47 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 17:05:47 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 17:05:47 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 17:05:47 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 17:05:47 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 17:05:47 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 17:05:47 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 17:05:47 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 17:05:47 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 17:05:47 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 17:05:47 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 17:05:47 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 17:05:47 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 17:05:47 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 17:05:47 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 17:20:11 Application is starting 
+04/05/2024 17:22:45 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 17:22:45 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 17:22:45 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 17:22:45 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 17:22:45 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 17:22:45 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 17:22:45 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 17:22:45 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 17:22:45 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 17:22:45 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 17:22:45 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 17:22:45 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 17:22:45 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 17:22:45 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 17:22:45 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 17:22:45 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 17:22:45 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 17:22:45 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 17:22:45 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 17:23:18 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 17:23:18 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 17:23:18 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 17:23:18 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 17:23:18 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 17:23:18 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 17:23:18 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 17:23:18 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 17:23:18 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 17:23:18 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 17:23:18 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 17:23:18 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 17:23:18 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 17:23:18 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 17:23:18 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 17:23:18 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 17:23:18 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 17:23:18 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 17:23:18 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 17:23:30 CartHeader retrieved successfully. CartHeaderId: 5, UserId: "1", CouponCode: null 
+04/05/2024 17:23:30 Retrieving details for CartDetailsId: 6, CartHeaderId: 5, ProductId: 3, Count: 15 
+04/05/2024 17:23:30 Product Details: ProductId: 3, Name: "Product 3", Price: 39.99, Description: "Description for Product 3", Category: "Category C" 
+04/05/2024 17:23:30 Total Price for 15 "Product 3"(s): 599.85 
+04/05/2024 17:23:30 Retrieving details for CartDetailsId: 7, CartHeaderId: 5, ProductId: 2, Count: 3 
+04/05/2024 17:23:30 Product Details: ProductId: 2, Name: "Product 2", Price: 29.99, Description: "Description for Product 2", Category: "Category B" 
+04/05/2024 17:23:30 Total Price for 3 "Product 2"(s): 89.97 
+04/05/2024 17:23:30 Retrieving details for CartDetailsId: 8, CartHeaderId: 5, ProductId: 1, Count: 4 
+04/05/2024 17:23:30 Product Details: ProductId: 1, Name: "Product 1", Price: 19.99, Description: "Description for Product 1", Category: "Category A" 
+04/05/2024 17:23:30 Total Price for 4 "Product 1"(s): 79.96 
+04/05/2024 17:23:30 Retrieving details for CartDetailsId: 9, CartHeaderId: 5, ProductId: 6, Count: 3 
+04/05/2024 17:23:30 Product Details: ProductId: 6, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 17:23:30 Total Price for 3 "Product 5"(s): 179.97 
+04/05/2024 17:23:30 Retrieving details for CartDetailsId: 13, CartHeaderId: 5, ProductId: 7, Count: 1 
+04/05/2024 17:23:30 Product Details: ProductId: 7, Name: "Product 5", Price: 59.99, Description: "Description for Product 5", Category: "Category B" 
+04/05/2024 17:23:30 Total Price for 1 "Product 5"(s): 59.99 
+04/05/2024 17:23:30 Retrieving details for CartDetailsId: 14, CartHeaderId: 5, ProductId: 5, Count: 1 
+04/05/2024 17:23:30 Product Details: ProductId: 5, Name: "Product 4", Price: 49.99, Description: "Description for Product 4", Category: "Category A" 
+04/05/2024 17:23:30 Total Price for 1 "Product 4"(s): 49.99 
+04/05/2024 17:42:13 Application is starting 
+04/05/2024 17:42:20 GetAllProductAsync method called 
+04/05/2024 17:42:20 Request from ProductAPI to https://localhost:6003/api/products 
+04/05/2024 17:42:20 Request from ProductAPI to https://localhost:6003/api/products 
+04/05/2024 17:42:23 Response is: {"StatusCode":200,"IsSuccess":true,"ErrorMessages":null,"Result":[{"productId":1,"name":"Product 1","price":19.99,"description":"Description for Product 1","categoryName":"Category A","imageUrl":"https://carmellamarketing.com/wp-content/uploads/2023/05/Screen-Shot-2023-05-09-at-9.50.02-AM-1024x650.png"},{"productId":2,"name":"Product 2","price":29.99,"description":"Description for Product 2","categoryName":"Category B","imageUrl":"https://xphotography.ca/wp-content/uploads/2023/04/micellar-cleansing-water-and-discs-to-remove-cosme-2023-02-10-09-25-13-utc.jpg"},{"productId":3,"name":"Product 3","price":39.99,"description":"Description for Product 3","categoryName":"Category C","imageUrl":"https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwe0cd4a5e/hi-res/TRT0409NAV_MODEL_FULL_FRONT.jpg"},{"productId":4,"name":"Product 4","price":49.99,"description":"Description for Product 4","categoryName":"Category A","imageUrl":"https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw5cd57565/hi-res/KNJ0321FRG_MODEL_FRONT.jpg"},{"productId":5,"name":"Product 4","price":49.99,"description":"Description for Product 4","categoryName":"Category A","imageUrl":"https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwed65fa7d/hi-res/JEP0398OLV_COLLAR_DETAIL.jpg"},{"productId":6,"name":"Product 5","price":59.99,"description":"Description for Product 5","categoryName":"Category B","imageUrl":"https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwd9e22242/hi-res/KNJ0066NAV_MODEL_FRONT.jpg"},{"productId":7,"name":"Product 5","price":59.99,"description":"Description for Product 5","categoryName":"Category B","imageUrl":"https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw6659302a/hi-res/TRC0270STN_MODEL_FULL.jpg"}]} 
+04/05/2024 17:47:53 Application is starting 
+04/05/2024 17:48:01 GetAllProductAsync method called 
+04/05/2024 17:48:01 Request from ProductAPI to https://localhost:6003/api/products 
+04/05/2024 17:48:01 Request from ProductAPI to https://localhost:6003/api/products 
+04/05/2024 17:48:03 Response is: {"StatusCode":200,"IsSuccess":true,"ErrorMessages":null,"Result":[{"productId":1,"name":"Product 1","price":19.99,"description":"Description for Product 1","categoryName":"Category A","imageUrl":"https://carmellamarketing.com/wp-content/uploads/2023/05/Screen-Shot-2023-05-09-at-9.50.02-AM-1024x650.png"},{"productId":2,"name":"Product 2","price":29.99,"description":"Description for Product 2","categoryName":"Category B","imageUrl":"https://xphotography.ca/wp-content/uploads/2023/04/micellar-cleansing-water-and-discs-to-remove-cosme-2023-02-10-09-25-13-utc.jpg"},{"productId":3,"name":"Product 3","price":39.99,"description":"Description for Product 3","categoryName":"Category C","imageUrl":"https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwe0cd4a5e/hi-res/TRT0409NAV_MODEL_FULL_FRONT.jpg"},{"productId":4,"name":"Product 4","price":49.99,"description":"Description for Product 4","categoryName":"Category A","imageUrl":"https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw5cd57565/hi-res/KNJ0321FRG_MODEL_FRONT.jpg"},{"productId":5,"name":"Product 4","price":49.99,"description":"Description for Product 4","categoryName":"Category A","imageUrl":"https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwed65fa7d/hi-res/JEP0398OLV_COLLAR_DETAIL.jpg"},{"productId":6,"name":"Product 5","price":59.99,"description":"Description for Product 5","categoryName":"Category B","imageUrl":"https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwd9e22242/hi-res/KNJ0066NAV_MODEL_FRONT.jpg"},{"productId":7,"name":"Product 5","price":59.99,"description":"Description for Product 5","categoryName":"Category B","imageUrl":"https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw6659302a/hi-res/TRC0270STN_MODEL_FULL.jpg"}]} 
+04/05/2024 18:04:49 Application is starting 
+04/09/2024 09:20:18 Application is starting 
+04/09/2024 09:20:31 Application is starting 
+04/09/2024 10:01:58 Application is starting 
+04/09/2024 10:06:38 Application is starting 
+04/09/2024 10:10:56 Application is starting 
+04/09/2024 11:01:35 Application is starting 
+04/09/2024 11:09:03 Application is starting 
+04/09/2024 11:18:48 Application is starting 

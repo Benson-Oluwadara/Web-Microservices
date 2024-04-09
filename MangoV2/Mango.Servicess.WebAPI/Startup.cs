@@ -46,17 +46,22 @@ namespace Mango.Services.ProductAPI
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
+            //if (env.IsDevelopment())
+            //{
+                //app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-            else
+            app.UseSwaggerUI(c =>
             {
-                app.UseExceptionHandler("/Error");
-                app.UseHsts();
-            }
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProductAPI v1");
+                c.RoutePrefix = string.Empty;
+            });
+            //app.UseSwaggerUI();
+            //}
+            //else
+            //{
+            //    app.UseExceptionHandler("/Error");
+            //    app.UseHsts();
+            //}
 
             app.UseHttpsRedirection();
             app.UseRouting();
