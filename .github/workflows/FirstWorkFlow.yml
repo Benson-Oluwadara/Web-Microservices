@@ -19,9 +19,7 @@ jobs:
         dotnet-version: '6.0.x'  # Adjust the version as needed
         
     - name: Restore dependencies
-      run: dotnet restore
-      with:
-        path: MangoV2
+      run: dotnet restore MangoV2/MangoV2.sln 
       
     - name: Build
       run: dotnet build --configuration Release
