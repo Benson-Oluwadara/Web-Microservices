@@ -20,6 +20,8 @@ jobs:
         
     - name: Restore dependencies
       run: dotnet restore
+      with:
+        path: MangoV2
       
     - name: Build
       run: dotnet build --configuration Release
