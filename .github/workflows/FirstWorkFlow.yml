@@ -3,7 +3,7 @@ name: .NET Build and Test
 on:
   push:
     branches:
-      - main  # Change this to match your main branch name
+      - master  # Change this to match your main branch name
 
 jobs:
   build:
